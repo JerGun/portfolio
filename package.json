@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "export": "next export"
+    "export": "next export && touch out/.nojekyll"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.1.2",
