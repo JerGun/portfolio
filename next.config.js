@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const isProd = process.env.NODE_ENV === "production"
-const path = require('path')
+const path = require("path")
 
 const nextConfig = {
   // target: "serverless",
@@ -25,6 +25,9 @@ const nextConfig = {
   env: {
     INFURA_PROJECT_ID: process.env.INFURA_PROJECT_ID,
     INFURA_API_KEY: process.env.INFURA_API_KEY,
+  },
+  eslint: {
+    ignoreDuringBuilds: true,
   },
 }
 
