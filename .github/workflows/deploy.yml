@@ -30,12 +30,12 @@ jobs:
         run: npm install
 
       - name: Build
-        run: |
-          npm run build
-          npm run export
+        run: npm run build && npm run export
 
       - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
+        uses: JamesIves/github-pages-deploy-action@4.1.0
         with:
-          deploy_key: ${{ secrets.ACTIONS_SECRET_KEY }}
-          publish_dir: ./out
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: gh-pages # The branch the action should deploy to.
+          FOLDER: out 
+          CLEAN: true
