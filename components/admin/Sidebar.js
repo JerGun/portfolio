@@ -4,7 +4,6 @@ import { useRouter } from "next/router"
 import cookieCutter from "cookie-cutter"
 import Link from "next/link"
 
-const assetPrefix = process.env.ASSET_PREFIX
 const menus = [
   {
     name: "Dashboard",
@@ -52,7 +51,7 @@ export default function Sidebar() {
     <div className="h-full w-2/12 flex flex-col justify-between p-5">
       <div className="flex flex-col items-center space-y-5">
         <Link href="/admin">
-          <img src={`${assetPrefix}/images/logo.png`} alt="pawaret.dev" className="h-20 w-20 cursor-pointer" />
+          <img src="/images/logo.png" alt="pawaret.dev" className="h-20 w-20 cursor-pointer" />
         </Link>
         {menus.map((menu, i) => (
           <Link href={menu.path} key={i}>
