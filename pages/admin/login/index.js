@@ -42,13 +42,13 @@ export default function Login() {
       <Head>
         <title>Portfolio | Admin - Login</title>
         <meta name="description" content="pawaret.dev" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="favicon.ico" />
       </Head>
       <form
         className="h-3/4 w-1/3 flex flex-col items-center space-y-10 px-10 py-10 rounded-2xl bg-background opacity-90"
         onSubmit={loginHandler}
       >
-        <img src="/images/logo.png" alt="pawaret.dev" className="h-20 w-20" />
+        <img src="images/logo.png" alt="pawaret.dev" className="h-20 w-20" />
         <div>
           <div className="flex space-x-3 uppercase font-bold text-2xl">
             <p className="text-primary">Admin</p>

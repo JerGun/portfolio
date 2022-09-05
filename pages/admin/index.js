@@ -22,7 +22,7 @@ export default function Admin() {
       <Head>
         <title>Portfolio | Admin - Dashboard</title>
         <meta name="description" content="pawaret.dev" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="favicon.ico" />
       </Head>
       <Sidebar />
       <span className="h-full w-0.5 bg-black"></span>

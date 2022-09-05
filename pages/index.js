@@ -7,7 +7,7 @@ export default function Home() {
       <Head>
         <title>Pawaret Muengkaew | Portfolio</title>
         <meta name="description" content="pawaret.dev" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="favicon.ico" />
       </Head>
       <Navbar />
       <div>asd</div>

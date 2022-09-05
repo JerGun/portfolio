@@ -19,10 +19,10 @@ export default function Experiences() {
     try {
       setIsLoading(true)
       await axios
-        .post("/api/experience", payload)
+        .post("api/experience", payload)
         .then((res) => {
           setIsLoading(false)
-          router.push({ pathname: "/admin" })
+          router.push({ pathname: "admin" })
         })
         .catch((error) => {
           console.log(error)
@@ -37,7 +37,7 @@ export default function Experiences() {
       <Head>
         <title>Portfolio | Admin</title>
         <meta name="description" content="pawaret.dev" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="favicon.ico" />
       </Head>
       <Sidebar />
       <span className="h-full w-0.5 bg-black"></span>
