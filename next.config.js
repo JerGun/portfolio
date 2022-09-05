@@ -1,7 +1,20 @@
 /** @type {import('next').NextConfig} */
 const isProd = process.env.NODE_ENV === "production"
+const path = require('path')
 
 const nextConfig = {
+  // target: "serverless",
+  exportPathMap: () => ({
+    "/": {
+      page: "/",
+    },
+  }),
+  sassOptions: {
+    includePaths: [path.join(__dirname, "styles")],
+  },
+  experimental: {
+    scrollRestoration: true,
+  },
   images: {
     loader: "akamai",
     path: "",
