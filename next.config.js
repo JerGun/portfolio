@@ -11,7 +11,7 @@ const nextConfig = {
   },
   reactStrictMode: true,
   assetPrefix: isProd
-    ? "https://cdn.statically.io/gh/JerGun/jergun.github.io/gh-pages/"
+    ? "https://cdn.statically.io/gh/JerGun/portfolio-x/gh-pages/"
     : "",
   env: {
     INFURA_PROJECT_ID: process.env.INFURA_PROJECT_ID,
