@@ -42,7 +42,7 @@ export default function Login() {
       <Head>
         <title>Portfolio | Admin - Login</title>
         <meta name="description" content="pawaret.dev" />
-        <link rel="icon" href="favicon.ico" />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
       <form
         className="h-3/4 w-1/3 flex flex-col items-center space-y-10 px-10 py-10 rounded-2xl bg-background opacity-90"
