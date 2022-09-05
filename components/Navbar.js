@@ -44,7 +44,8 @@ export default function Navbar() {
         </a>
       </div>
       <a
-        href={data.resume}
+        // href={data.resume}
+        href="https://pawaret.dev/resume.pdf"
         target="_blank"
         className="h-full flex items-center justify-center px-5 space-x-3"
       >
