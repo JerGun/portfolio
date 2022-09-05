@@ -16,8 +16,8 @@ const nextConfig = {
     scrollRestoration: true,
   },
   images: {
-    loader: "akamai",
-    path: "",
+    loader: 'imgix',
+    domains: ['www.xda-developers.com'],
   },
   reactStrictMode: true,
   assetPrefix: isProd ? process.env.ASSET_PREFIX : "",
