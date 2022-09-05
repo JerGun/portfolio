@@ -30,12 +30,12 @@ jobs:
         run: npm install
 
       - name: Build
-        run: npm run build && npm run export
+        run: |
+          npm run build
+          npm run export
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: gh-pages
-          FOLDER: out
-          CLEAN: true
+          deploy_key: ${{ secrets.ACTIONS_SECRET_KEY }}
+          publish_dir: ./out
