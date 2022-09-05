@@ -10,6 +10,7 @@ export default function Footer() {
         <a
           href="https://facebook.com/GongPawaret/"
           target="_blank"
+          rel="noreferrer"
           className="text-white hover:underline"
         >
           Pawaret Muengkaew
@@ -18,6 +19,7 @@ export default function Footer() {
         <a
           href="https://github.com/JerGun/"
           target="_blank"
+          rel="noreferrer"
           className="text-white hover:underline"
         >
           GitHub

@@ -3,6 +3,7 @@ import { faPen } from "@fortawesome/free-solid-svg-icons"
 import { useRouter } from "next/router"
 import cookieCutter from "cookie-cutter"
 import Link from "next/link"
+import Image from "next/image"
 
 const menus = [
   {
@@ -51,7 +52,14 @@ export default function Sidebar() {
     <div className="h-full w-2/12 flex flex-col justify-between p-5">
       <div className="flex flex-col items-center space-y-5">
         <Link href="/admin">
-          <img src="/images/logo.png" alt="pawaret.dev" className="h-20 w-20 cursor-pointer" />
+          <div className="h-20 w-20 cursor-pointer">
+            <Image
+              src="/images/logo.png"
+              alt="pawaret.dev"
+              width={"100%"}
+              height={"100%"}
+            />
+          </div>
         </Link>
         {menus.map((menu, i) => (
           <Link href={menu.path} key={i}>

@@ -5,6 +5,7 @@ import { create as ipfsHttpClient } from "ipfs-http-client"
 import cookieCutter from "cookie-cutter"
 import axios from "axios"
 import Input from "./Input"
+import Button from "./Button"
 
 const projectId = process.env.INFURA_PROJECT_ID
 const projectSecret = process.env.INFURA_API_KEY

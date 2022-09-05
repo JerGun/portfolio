@@ -4,7 +4,7 @@ import { useEffect, useState } from "react"
 import Sidebar from "../../components/admin/Sidebar"
 import UploadFile from "../../components/UploadFile"
 
-export default function index() {
+export default function Admin() {
   const [experiences, setExperiences] = useState([])
 
   useEffect(() => {
