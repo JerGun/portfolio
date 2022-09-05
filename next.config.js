@@ -2,6 +2,10 @@
 const isProd = process.env.NODE_ENV === "production"
 
 const nextConfig = {
+  images: {
+    loader: "akamai",
+    path: "",
+  },
   reactStrictMode: true,
   assetPrefix: isProd ? process.env.ASSET_PREFIX : "",
   swcMinify: true,
