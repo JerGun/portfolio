@@ -10,10 +10,10 @@ const nextConfig = {
     path: "",
   },
   reactStrictMode: true,
-  basePath: isProd ? "" : "/portfolio-x",
-  assetPrefix: isProd
-    ? ""
-    : "https://cdn.statically.io/gh/JerGun/portfolio-x/gh-pages/",
+  // basePath: isProd ? "" : "/portfolio-x",
+  // assetPrefix: isProd
+  //   ? ""
+  //   : "https://cdn.statically.io/gh/JerGun/portfolio-x/gh-pages/",
   env: {
     INFURA_PROJECT_ID: process.env.INFURA_PROJECT_ID,
     INFURA_API_KEY: process.env.INFURA_API_KEY,
