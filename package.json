@@ -32,7 +32,9 @@
     "next-auth": "^4.10.3",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-firebaseui": "^6.0.0"
+    "react-firebaseui": "^6.0.0",
+    "react-type-animation": "^2.1.1",
+    "swr": "^1.3.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.8",
