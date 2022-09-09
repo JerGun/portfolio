@@ -1,12 +1,12 @@
 import Head from "next/head"
-import Input from "../../../components/Input"
 import { useState } from "react"
 import axios from "axios"
 import cookieCutter from "cookie-cutter"
 import { useRouter } from "next/router"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faKey, faUser } from "@fortawesome/free-solid-svg-icons"
-import Button from "../../../components/Button"
+import Input from "@components/Input"
+import Button from "@components/Button"
 
 export default function Login() {
   const router = useRouter()
@@ -27,7 +27,7 @@ export default function Login() {
         .then((res) => {
           setIsLoading(false)
           cookieCutter.set("accessToken", res.data.token)
-          router.push({ pathname: "/admin" })
+          router.push({ pathname: "/" })
         })
         .catch((error) => {
           console.log(error)
