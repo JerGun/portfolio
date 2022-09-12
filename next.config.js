@@ -2,9 +2,6 @@
 const isProd = process.env.NODE_ENV === "production"
 
 const nextConfig = {
-  experimental: {
-    scrollRestoration: true,
-  },
   images: {
     loader: "akamai",
     path: "",

@@ -23,8 +23,12 @@ module.exports = {
         },
       },
       animation: {
-        'bounce-five': 'bounce 1s ease-in-out 4.5',
-      }
+        "bounce-five": "bounce 1s ease-in-out 4.5",
+        "ping-slow": "ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite",
+      },
+      transitionProperty: {
+        width: "width, padding-left, padding-right, opacity",
+      },
     },
     fontFamily: {
       oswald: ["Oswald"],
