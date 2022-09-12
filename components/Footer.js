@@ -4,7 +4,7 @@ import { faCopyright } from "@fortawesome/free-regular-svg-icons"
 export default function Footer() {
   return (
     <div className="h-10 flex justify-center space-x-1 bg-background opacity-90">
-      <div className="flex items-center space-x-1 text-sm text-gray-400">
+      <div className="flex items-center space-x-1 text-sm text-customGrayLight">
         <FontAwesomeIcon icon={faCopyright} />
         <p>All rights are reserved 2022. Powered by </p>
         <a

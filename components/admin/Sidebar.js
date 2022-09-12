@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faPen } from "@fortawesome/free-solid-svg-icons"
+import { faAward, faBriefcase, faGraduationCap, faHouse, faLightbulb, faPen, faRocket, faSquarePollHorizontal, faUser } from "@fortawesome/free-solid-svg-icons"
 import { useRouter } from "next/router"
 import cookieCutter from "cookie-cutter"
 import Link from "next/link"
@@ -8,33 +8,38 @@ const menus = [
   {
     name: "Dashboard",
     path: "/admin",
-    icon: faPen,
+    icon: faHouse,
   },
   {
     name: "Bio",
     path: "/admin/bio",
-    icon: faPen,
-  },
-  {
-    name: "Resume",
-    path: "/admin/resume",
-    icon: faPen,
+    icon: faUser,
   },
   {
     name: "Experiences",
     path: "/admin/experiences",
-    icon: faPen,
+    icon: faRocket,
+  },
+  {
+    name: "Skills",
+    path: "/admin/skills",
+    icon: faLightbulb,
   },
   {
     name: "Education",
     path: "/admin/education",
-    icon: faPen,
+    icon: faGraduationCap,
   },
   {
     name: "Projects",
     path: "/admin/projects",
-    icon: faPen,
+    icon: faBriefcase,
   },
+  {
+    name: "Highlight",
+    path: "/admin/highlight",
+    icon: faAward,
+  }
 ]
 
 export default function Sidebar() {
@@ -51,7 +56,7 @@ export default function Sidebar() {
     <div className="h-full w-2/12 flex flex-col justify-between p-5">
       <div className="flex flex-col items-center space-y-5">
         <Link href="/admin">
-          <img src="images/logo.png" alt="pawaret.dev" className="h-20 w-20 cursor-pointer" />
+          <img src="/images/logo.png" alt="pawaret.dev" className="h-20 w-20 cursor-pointer" />
         </Link>
         {menus.map((menu, i) => (
           <Link href={menu.path} key={i}>

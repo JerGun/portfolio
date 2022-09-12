@@ -6,11 +6,15 @@ import {
 } from "@fortawesome/free-solid-svg-icons"
 import { useState } from "react"
 
-export default function Input({ w, type, placeholder, onChange, icon }) {
+export default function Input({ h, w, type, placeholder, onChange, icon }) {
   const [isShow, setIsShow] = useState(false)
 
   return (
-    <div className={`h-12 ${w} flex items-center p-2 px-5 rounded-xl bg-input`}>
+    <div
+      className={`${
+        h ? h : "h-12"
+      } ${w} flex items-center p-2 px-5 rounded-xl bg-input`}
+    >
       <input
         type={
           type != "password"

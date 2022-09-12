@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { Switch } from "@headlessui/react"
-import CustomDatePicker from "../components/CustomDatePicker"
+import CustomDatePicker from "@components/CustomDatePicker"
 
 const defaultFrom = {
   day: new Date().getDate(),
@@ -98,7 +98,7 @@ export default function InputDate({ onChange }) {
           </div>
         </Switch.Group>
       </div>
-      <p className="pl-5 text-xs text-gray-300">ex: {date}</p>
+      <p className="pl-5 text-xs text-customGrayLight">ex: {date}</p>
     </div>
   )
 }
