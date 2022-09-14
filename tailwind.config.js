@@ -28,7 +28,9 @@ module.exports = {
         "ping-slow": "ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite",
       },
       transitionProperty: {
-        width: "width, padding-left, padding-right, opacity",
+        width: "width",
+        opacity: "opacity",
+        position: "position",
       },
     },
     fontFamily: {
