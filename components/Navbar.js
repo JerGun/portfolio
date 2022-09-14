@@ -21,7 +21,11 @@ export default function Navbar({ opacity, resumeRef, workRef, contactRef }) {
   })
 
   const executeScroll = (ref) => {
-    ref.current.scrollIntoView({ behavior: "smooth" })
+    const yOffset = -60
+    const y =
+      ref.current.getBoundingClientRect().top + window.pageYOffset + yOffset
+    window.scrollTo({ top: y, behavior: "smooth" })
+    // ref.current.scrollIntoView({ behavior: "smooth" })
   }
 
   return (
@@ -41,8 +45,8 @@ export default function Navbar({ opacity, resumeRef, workRef, contactRef }) {
           <button
             onClick={() => executeScroll(resumeRef)}
             className={`${
-              isSkillsVisible ? "text-primary" : ""
-            } h-full flex items-center justify-center px-5 space-x-3`}
+              isSkillsVisible ? "text-primary" : "text-text"
+            } h-full flex items-center justify-center px-5 space-x-3 transition ease-in-out duration-300 hover:scale-110 hover:text-primary`}
           >
             <FontAwesomeIcon icon={faLightbulb} />
             <p>Skills</p>
@@ -50,8 +54,8 @@ export default function Navbar({ opacity, resumeRef, workRef, contactRef }) {
           <button
             onClick={() => executeScroll(workRef)}
             className={`${
-              !isSkillsVisible && isWorkVisible ? "text-primary" : ""
-            } h-full flex items-center justify-center px-5 space-x-3`}
+              !isSkillsVisible && isWorkVisible ? "text-primary" : "text-text"
+            } h-full flex items-center justify-center px-5 space-x-3 transition ease-in-out duration-300 hover:scale-110 hover:text-primary`}
           >
             <FontAwesomeIcon icon={faBriefcase} />
             <p>Work</p>
@@ -59,10 +63,10 @@ export default function Navbar({ opacity, resumeRef, workRef, contactRef }) {
           <button
             onClick={() => executeScroll(contactRef)}
             className={`${
-              !isSkillsVisible && !isWorkVisible && contactRef
+              !isSkillsVisible && !isWorkVisible && isContactVisible
                 ? "text-primary"
-                : ""
-            } h-full flex items-center justify-center px-5 space-x-3`}
+                : "text-text"
+            } h-full flex items-center justify-center px-5 space-x-3 transition ease-in-out duration-300 hover:scale-110 hover:text-primary`}
           >
             <FontAwesomeIcon icon={faEnvelope} />
             <p>Contact</p>

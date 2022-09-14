@@ -13,10 +13,11 @@ module.exports = {
         ...{
           background: "#0f0b15",
           subBackground: "#323232",
-          primary: "#FFC300",
+          primary: "#FFC400",
           secondary: "#830ff8",
           customGrayHeavy: "#424242",
           customGrayLight: "#999999",
+          text: "#CCCCCC",
           input: "#453b55",
           subInput: "#524a5e",
           placeholder: "#7F788D",
