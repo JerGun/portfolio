@@ -12,7 +12,7 @@ function MyApp({ Component, pageProps }) {
   const router = useRouter()
 
   return (
-    <div className="relative h-full w-full bg-white">
+    <div className="relative h-full w-full bg-white select-none">
       {/* <SmoothScroll /> */}
       <Component {...pageProps} />
       {/* {!router.pathname.startsWith("/admin")  && <Footer />} */}
