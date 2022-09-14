@@ -47,7 +47,7 @@ export default function Home() {
             workRef={workRef}
             contactRef={contactRef}
           />
-          <div ref={resumeRef} className="h-screen w-full">
+          <div ref={resumeRef} className="h-full w-full">
             <Skills />
           </div>
           <div id="work" ref={workRef} className="h-screen w-full">
