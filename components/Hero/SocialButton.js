@@ -11,12 +11,12 @@ const link = [
   {
     name: "github",
     url: "https://github.com/JerGun/",
-    icon: <GitHub />,
+    icon: <GitHub className={true} />,
   },
   {
     name: "gitlab",
     url: "https://gitlab.com/JerGun/",
-    icon: <GitLab />,
+    icon: <GitLab className={true} />,
   },
 ]
 

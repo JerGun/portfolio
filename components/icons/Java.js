@@ -2,15 +2,10 @@ export default function Java() {
   return (
     <div>
       <svg
-        aria-hidden="true"
-        focusable="false"
-        data-prefix="fab"
-        data-icon="java"
-        className="svg-inline--fa fa-java fa-w-12 fa-3x "
+        className="svg-inline--fa fa-java fa-w-12 fa-3x"
         role="img"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 384 512"
-        fill="currentColor"
       >
         <path
           fill="currentColor"
