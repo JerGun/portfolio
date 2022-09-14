@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import axios from "axios"
 import { useEffect, useState } from "react"
 import { TypeAnimation } from "react-type-animation"
-import SocialButton from "./Hero/SocialButton"
+import SocialButton from "./hero/SocialButton"
 import TiltPhase from "./TiltPhase"
 
 export default function Hero() {
