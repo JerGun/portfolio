@@ -9,8 +9,11 @@ import Work from "@components/Work"
 
 export default function Home() {
   const heroRef = useRef(null)
-  const resumeRef = useRef(null)
+  const skillRef = useRef(null)
   const workRef = useRef(null)
+  const experienceRef = useRef(null)
+  const rewardRef = useRef(null)
+  const educationRef = useRef(null)
   const contactRef = useRef(null)
 
   const [scrollY, setScrollY] = useState(0)
@@ -43,14 +46,27 @@ export default function Home() {
         <div className="relative">
           <Navbar
             opacity={scrollY}
-            resumeRef={resumeRef}
+            heroRef={heroRef}
+            skillRef={skillRef}
             workRef={workRef}
+            experienceRef={experienceRef}
+            rewardRef={rewardRef}
+            educationRef={educationRef}
             contactRef={contactRef}
           />
-          <div ref={resumeRef} className="h-full w-full">
+          <div ref={skillRef} className="h-full w-full">
             <Skills />
           </div>
           <div id="work" ref={workRef} className="h-screen w-full">
+            <Work />
+          </div>
+          <div ref={experienceRef} className="h-screen w-full">
+            <Hero />
+          </div>
+          <div ref={rewardRef} className="h-screen w-full">
+            <Hero />
+          </div>
+          <div ref={educationRef} className="h-screen w-full">
             <Hero />
           </div>
           <div ref={contactRef} className="h-screen w-full">
