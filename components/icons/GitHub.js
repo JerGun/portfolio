@@ -1,11 +1,14 @@
-export default function GitHub() {
+export default function GitHub({ className }) {
   return (
     <div>
       <svg
-        className="h-6 w-6 text-white transition ease-in-out duration-500 group-hover:text-primary group-hover:scale-125"
-        height="512"
+        className={
+          className &&
+          "h-6 w-6 text-white transition ease-in-out duration-500 group-hover:text-primary group-hover:scale-125"
+        }
+        height="50"
+        width="50"
         viewBox="0 0 24 24"
-        width="512"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path

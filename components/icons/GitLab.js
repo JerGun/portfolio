@@ -1,8 +1,13 @@
-export default function GitLab() {
+export default function GitLab({ className }) {
   return (
     <div>
       <svg
-        className="h-6 w-6 text-white transition ease-in-out duration-500 group-hover:text-primary group-hover:scale-125"
+        className={
+          className &&
+          "h-6 w-6 text-white transition ease-in-out duration-500 group-hover:text-primary group-hover:scale-125"
+        }
+        height="50"
+        width="50"
         viewBox="0 0 50 50"
       >
         <path
