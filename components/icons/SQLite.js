@@ -17,9 +17,9 @@ export default function SQLite() {
             id="A"
             gradientUnits="userSpaceOnUse"
           >
-            <stop stop-color="currentColor" offset="0%" />
-            <stop stop-color="currentColor" offset="92.024%" />
-            <stop stop-color="currentColor" offset="100%" />
+            <stop stopColor="currentColor" offset="0%" />
+            <stop stopColor="currentColor" offset="92.024%" />
+            <stop stopColor="currentColor" offset="100%" />
           </linearGradient>
         </defs>
         <path

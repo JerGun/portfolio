@@ -8,7 +8,7 @@ export default function GitHubPages() {
         width="169px"
         height="34px"
         viewBox="0 0 169 34"
-        enable-background="new 0 0 169 34"
+        enableBackground="new 0 0 169 34"
         fill="currentColor"
       >
         <path
