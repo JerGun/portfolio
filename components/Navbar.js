@@ -26,13 +26,16 @@ export default function Navbar({
 }) {
   const isSkillsVisible = useOnScreen(skillRef)
   const isWorkVisible = useOnScreen(workRef)
+  const isExperienceVisible = useOnScreen(experienceRef)
+  const isRewardVisible = useOnScreen(rewardRef)
+  const isEducationVisible = useOnScreen(educationRef)
   const isContactVisible = useOnScreen(contactRef)
 
   const [isSkillHover, setIsSkillHover] = useState(false)
   const [isWorkHover, setIsWorkHover] = useState(false)
   const [isExperienceHover, setIsExperienceHover] = useState(false)
   const [isRewardHover, setIsRewardHover] = useState(false)
-  const [iseducationHover, setIseducationHover] = useState(false)
+  const [isEducationHover, setIsEducationHover] = useState(false)
   const [isContactHover, setIsContactHover] = useState(false)
 
   const [data, setData] = useState({
@@ -69,6 +72,7 @@ export default function Navbar({
         </button>
         <div className="h-full flex capitalize">
           <OptionButton
+            width={"30px"}
             name={"Skills"}
             icon={faLightbulb}
             onClick={() => executeScroll(skillRef)}
@@ -77,7 +81,8 @@ export default function Navbar({
             condition={isSkillsVisible | isSkillHover}
           />
           <OptionButton
-            name={"Work"}
+            width={"30px"}
+            name={"Works"}
             icon={faBriefcase}
             onClick={() => executeScroll(workRef)}
             onMouseEnter={() => setIsWorkHover(true)}
@@ -85,31 +90,45 @@ export default function Navbar({
             condition={(!isSkillsVisible && isWorkVisible) | isWorkHover}
           />
           <OptionButton
-            width={"90px"}
+            width={"80px"}
             name={"Experience"}
             icon={faRocket}
             onClick={() => executeScroll(experienceRef)}
             onMouseEnter={() => setIsExperienceHover(true)}
             onMouseLeave={() => setIsExperienceHover(false)}
-            condition={(!isSkillsVisible && isWorkVisible) | isExperienceHover}
+            condition={
+              (!isSkillsVisible && !isWorkVisible && isExperienceVisible) |
+              isExperienceHover
+            }
           />
           <OptionButton
-            width={"60px"}
+            width={"50px"}
             name={"Reward"}
             icon={faAward}
             onClick={() => executeScroll(rewardRef)}
             onMouseEnter={() => setIsRewardHover(true)}
             onMouseLeave={() => setIsRewardHover(false)}
-            condition={(!isSkillsVisible && isWorkVisible) | isRewardHover}
+            condition={
+              (!isSkillsVisible &&
+                !isWorkVisible &&
+                !isExperienceVisible &&
+                isRewardVisible) | isRewardHover
+            }
           />
           <OptionButton
-            width={"60px"}
+            width={"70px"}
             name={"Education"}
             icon={faGraduationCap}
-            onClick={() => executeScroll(rewardRef)}
-            onMouseEnter={() => setIsRewardHover(true)}
-            onMouseLeave={() => setIsRewardHover(false)}
-            condition={(!isSkillsVisible && isWorkVisible) | isRewardHover}
+            onClick={() => executeScroll(educationRef)}
+            onMouseEnter={() => setIsEducationHover(true)}
+            onMouseLeave={() => setIsEducationHover(false)}
+            condition={
+              (!isSkillsVisible &&
+                !isWorkVisible &&
+                !isExperienceVisible &&
+                !isRewardVisible &&
+                isEducationVisible) | isEducationHover
+            }
           />
           <OptionButton
             name={"Contact"}
@@ -117,7 +136,14 @@ export default function Navbar({
             onClick={() => executeScroll(educationRef)}
             onMouseEnter={() => setIsContactHover(true)}
             onMouseLeave={() => setIsContactHover(false)}
-            condition={(!isSkillsVisible && isWorkVisible) | isContactHover}
+            condition={
+              (!isSkillsVisible &&
+                !isWorkVisible &&
+                !isExperienceVisible &&
+                !isRewardVisible &&
+                !isEducationVisible &&
+                isContactVisible) | isContactHover
+            }
           />
         </div>
         <a
