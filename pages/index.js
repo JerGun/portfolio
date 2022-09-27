@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react"
 import Footer from "@components/Footer"
 import Hero from "@components/Hero"
 import Skills from "@components/Skills"
-import Work from "@components/Work"
+import Works from "@components/Works"
 // import SmoothScroll from "@components/SmoothScroll"
 
 export default function Home() {
@@ -57,19 +57,19 @@ export default function Home() {
           <div ref={skillRef} className="h-full w-full">
             <Skills />
           </div>
-          <div id="work" ref={workRef} className="h-screen w-full">
-            <Work />
+          <div id="work" ref={workRef} className="h-full w-full">
+            <Works />
           </div>
-          <div ref={experienceRef} className="h-screen w-full">
+          <div ref={experienceRef} className="h-full w-full">
             <Hero />
           </div>
-          <div ref={rewardRef} className="h-screen w-full">
+          <div ref={rewardRef} className="h-full w-full">
             <Hero />
           </div>
-          <div ref={educationRef} className="h-screen w-full">
+          <div ref={educationRef} className="h-full w-full">
             <Hero />
           </div>
-          <div ref={contactRef} className="h-screen w-full">
+          <div ref={contactRef} className="h-full w-full">
             <Hero />
           </div>
           <Footer />

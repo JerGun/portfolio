@@ -58,7 +58,7 @@ export default function Hero() {
                 <div className="flex space-x-5">
                   {bio.title == "Sentence 2" && (
                     <>
-                      <div className="h-0.5 w-10 mt-3 bg-white"></div>
+                      <span className="h-0.5 w-10 mt-3 bg-white"></span>
                       <p className="w-11/12">{bio.description}</p>
                     </>
                   )}
