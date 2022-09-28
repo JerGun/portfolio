@@ -3,8 +3,12 @@ import Head from "next/head"
 import { useEffect, useRef, useState } from "react"
 import Footer from "@components/Footer"
 import Hero from "@components/Hero"
-import Skills from "@components/Skills"
-import Works from "@components/Works"
+import Works from "@components/home/Works"
+import Skills from "@components/home/Skills"
+import Experiences from "@components/home/Experiences"
+import Reward from "@components/home/Reward"
+import Education from "@components/home/Education"
+import Contact from "@components/home/Contact"
 // import SmoothScroll from "@components/SmoothScroll"
 
 export default function Home() {
@@ -61,16 +65,16 @@ export default function Home() {
             <Works />
           </div>
           <div ref={experienceRef} className="h-full w-full">
-            <Hero />
+            <Experiences />
           </div>
           <div ref={rewardRef} className="h-full w-full">
-            <Hero />
+            <Reward />
           </div>
           <div ref={educationRef} className="h-full w-full">
-            <Hero />
+            <Education />
           </div>
           <div ref={contactRef} className="h-full w-full">
-            <Hero />
+            <Contact />
           </div>
           <Footer />
         </div>

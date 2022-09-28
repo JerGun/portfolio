@@ -6,7 +6,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import axios from "axios"
 import { useEffect, useState } from "react"
-import Projects from "./Projects"
+import Projects from "../Projects"
 
 const projects = [
   {
