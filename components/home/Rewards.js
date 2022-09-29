@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Reward() {
+export default function Rewards() {
   return (
     <div className="h-full w-full flex flex-col items-center py-20 space-y-16">
       <p className="text-4xl font-bold capitalize">Rewards</p>
