@@ -91,7 +91,7 @@ export default function Navbar({
           />
           <OptionButton
             width={"80px"}
-            name={"Experience"}
+            name={"Experiences"}
             icon={faRocket}
             onClick={() => executeScroll(experienceRef)}
             onMouseEnter={() => setIsExperienceHover(true)}
@@ -103,7 +103,7 @@ export default function Navbar({
           />
           <OptionButton
             width={"50px"}
-            name={"Reward"}
+            name={"Rewards"}
             icon={faAward}
             onClick={() => executeScroll(rewardRef)}
             onMouseEnter={() => setIsRewardHover(true)}

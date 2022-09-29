@@ -96,7 +96,7 @@ export default function Projects({ title, projects, active }) {
                 {project.sourceCode && (
                   <a
                     href={project.sourceCode}
-                    className="p-3 transition duration-300 ease-in-out hover:scale-125"
+                    className="p-3 transition duration-300 ease-in-out hover:scale-125 hover:text-primary"
                   >
                     <FontAwesomeIcon
                       icon={faCode}
@@ -107,7 +107,7 @@ export default function Projects({ title, projects, active }) {
                 {project.live && (
                   <a
                     href={project.live}
-                    className="p-3 transition duration-300 ease-in-out hover:scale-125"
+                    className="p-3 transition duration-300 ease-in-out hover:scale-125 hover:text-primary"
                   >
                     <FontAwesomeIcon
                       icon={faArrowUpRightFromSquare}
