@@ -9,9 +9,9 @@ const educations = [
     degree: "Bachelor of Engineering in Software Engineering",
     date: "2019 - 2022",
     project:
-      "Senior Project I : Ticketplace - Ticket decentralized exchange website using React.js, Solidity and Blockchain technology",
+      "Senior Project I (Ticketplace) : Ticket decentralized exchange website using React.js, Solidity and Blockchain technology",
     projectSecond:
-      "Senior Project II : Archery Adventure - Wave-based & third-person shooter game using Unity and C#",
+      "Senior Project II (Archery Adventure) : Wave-based & third-person shooter game using Unity and C#",
   },
   {
     school: "Chiang Rai Vidhayakhome School",
@@ -26,9 +26,9 @@ export default function Education() {
       <p className="text-4xl font-bold capitalize">Education</p>
       <div className="w-7/12 flex flex-col justify-center space-y-12">
         {educations.map((education, i) => (
-          <>
-            <div className="h-fit w-full space-y-5" key={i}>
-              <p className="text-primary">{education.date}</p>
+          <div className="h-fit w-full space-y-12" key={i}>
+            <div className="h-fit w-full space-y-5">
+              <p className="text-customGrayLight">{education.date}</p>
               {education.archievement && (
                 <div className="flex items-center space-x-3">
                   <FontAwesomeIcon icon={faTrophy} className="text-primary" />
@@ -41,9 +41,9 @@ export default function Education() {
               <p className="text-text">{education.projectSecond}</p>
             </div>
             {i % 2 == 0 && (
-              <span className="h-0.5 w-full bg-white opacity-70"></span>
+              <div className="h-0.5 w-full bg-customGrayLight opacity-50"></div>
             )}
-          </>
+          </div>
         ))}
       </div>
     </div>

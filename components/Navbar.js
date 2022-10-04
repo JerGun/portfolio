@@ -20,21 +20,21 @@ export default function Navbar({
   skillRef,
   workRef,
   experienceRef,
-  rewardRef,
+  awardRef,
   educationRef,
   contactRef,
 }) {
   const isSkillsVisible = useOnScreen(skillRef)
   const isWorkVisible = useOnScreen(workRef)
   const isExperienceVisible = useOnScreen(experienceRef)
-  const isRewardVisible = useOnScreen(rewardRef)
+  const isAwardVisible = useOnScreen(awardRef)
   const isEducationVisible = useOnScreen(educationRef)
   const isContactVisible = useOnScreen(contactRef)
 
   const [isSkillHover, setIsSkillHover] = useState(false)
   const [isWorkHover, setIsWorkHover] = useState(false)
   const [isExperienceHover, setIsExperienceHover] = useState(false)
-  const [isRewardHover, setIsRewardHover] = useState(false)
+  const [isAwardHover, setIsAwardHover] = useState(false)
   const [isEducationHover, setIsEducationHover] = useState(false)
   const [isContactHover, setIsContactHover] = useState(false)
 
@@ -44,7 +44,7 @@ export default function Navbar({
   })
 
   const executeScroll = (ref) => {
-    const yOffset = -60
+    const yOffset = -45
     const y =
       ref.current.getBoundingClientRect().top + window.pageYOffset + yOffset
     window.scrollTo({ top: y, behavior: "smooth" })
@@ -103,16 +103,16 @@ export default function Navbar({
           />
           <OptionButton
             width={"50px"}
-            name={"Rewards"}
+            name={"Awards"}
             icon={faAward}
-            onClick={() => executeScroll(rewardRef)}
-            onMouseEnter={() => setIsRewardHover(true)}
-            onMouseLeave={() => setIsRewardHover(false)}
+            onClick={() => executeScroll(awardRef)}
+            onMouseEnter={() => setIsAwardHover(true)}
+            onMouseLeave={() => setIsAwardHover(false)}
             condition={
               (!isSkillsVisible &&
                 !isWorkVisible &&
                 !isExperienceVisible &&
-                isRewardVisible) | isRewardHover
+                isAwardVisible) | isAwardHover
             }
           />
           <OptionButton
@@ -126,7 +126,7 @@ export default function Navbar({
               (!isSkillsVisible &&
                 !isWorkVisible &&
                 !isExperienceVisible &&
-                !isRewardVisible &&
+                !isAwardVisible &&
                 isEducationVisible) | isEducationHover
             }
           />
@@ -140,7 +140,7 @@ export default function Navbar({
               (!isSkillsVisible &&
                 !isWorkVisible &&
                 !isExperienceVisible &&
-                !isRewardVisible &&
+                !isAwardVisible &&
                 !isEducationVisible &&
                 isContactVisible) | isContactHover
             }

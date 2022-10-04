@@ -6,7 +6,7 @@ import Hero from "@components/Hero"
 import Works from "@components/home/Works"
 import Skills from "@components/home/Skills"
 import Experiences from "@components/home/Experiences"
-import Reward from "@components/home/Rewards"
+import Awards from "@components/home/Awards"
 import Education from "@components/home/Education"
 import Contact from "@components/home/Contact"
 // import SmoothScroll from "@components/SmoothScroll"
@@ -16,7 +16,7 @@ export default function Home() {
   const skillRef = useRef(null)
   const workRef = useRef(null)
   const experienceRef = useRef(null)
-  const rewardRef = useRef(null)
+  const awardRef = useRef(null)
   const educationRef = useRef(null)
   const contactRef = useRef(null)
 
@@ -54,7 +54,7 @@ export default function Home() {
             skillRef={skillRef}
             workRef={workRef}
             experienceRef={experienceRef}
-            rewardRef={rewardRef}
+            awardRef={awardRef}
             educationRef={educationRef}
             contactRef={contactRef}
           />
@@ -67,8 +67,8 @@ export default function Home() {
           <div ref={experienceRef} className="h-full w-full">
             <Experiences />
           </div>
-          <div ref={rewardRef} className="h-full w-full">
-            <Reward />
+          <div ref={awardRef} className="h-full w-full">
+            <Awards />
           </div>
           <div ref={educationRef} className="h-full w-full">
             <Education />
