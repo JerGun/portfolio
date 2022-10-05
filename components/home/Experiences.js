@@ -1,11 +1,24 @@
-import { faCheck, faTrophy } from "@fortawesome/free-solid-svg-icons"
+import {
+  faCheck,
+  faTrophy,
+  faUserGraduate,
+  faUserTie,
+} from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import React from "react"
 
 const experiences = [
   {
+    title: "Backend Developer",
+    icon: faUserTie,
+    archievement: "Employee",
+    description: "",
+    company: "OneDee Solution Co., Ltd.,",
+    date: "Oct 2022 - Present",
+  },
+  {
     title: "Fullstack Developer",
-    award: false,
+    icon: faUserGraduate,
     archievement: "Internship",
     description: "",
     company: "OneDee Solution Co., Ltd.,",
@@ -13,7 +26,7 @@ const experiences = [
   },
   {
     title: "Backend Developer",
-    award: false,
+    icon: faUserGraduate,
     archievement: "Internship",
     description: "",
     company: "OneDee Solution Co., Ltd.,",
@@ -21,7 +34,7 @@ const experiences = [
   },
   {
     title: "Entrepreneurial Ecosystem Development",
-    award: false,
+    icon: faCheck,
     archievement: "Attend",
     description:
       "Attend on behalf of the Nixing team, the topic was: Food Order Application, where each meal was allocated by a nutritionist. ",
@@ -30,7 +43,7 @@ const experiences = [
   },
   {
     title: "Hackathon Boot Camp",
-    award: true,
+    icon: faTrophy,
     archievement: "2nd Place Award (Second Shop)",
     description:
       "There are activities to enhance the thinking process in the Software Development Process.",
@@ -39,7 +52,7 @@ const experiences = [
   },
   {
     title: "TPA'S PARTNER",
-    award: true,
+    icon: faTrophy,
     archievement: "Top 10 finalists",
     description:
       "TPA's Partner is a project to find students to work with the Thai Programming Association in organizing various activities for students.",
@@ -73,7 +86,10 @@ export default function Experiences() {
                 <p className="text-xl font-bold">{experience.title}</p>
                 {experience.archievement && (
                   <div className="flex items-center space-x-3">
-                    <FontAwesomeIcon icon={experience.award ? faTrophy : faCheck} className="text-primary" />
+                    <FontAwesomeIcon
+                      icon={experience.icon}
+                      className="text-primary"
+                    />
                     <p>{experience.archievement}</p>
                   </div>
                 )}
