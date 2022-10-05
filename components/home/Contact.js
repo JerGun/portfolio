@@ -10,6 +10,7 @@ export default function Contact() {
   const captchaRef = useRef(null)
 
   const [form, setForm] = useState({ name: "", email: "", message: "" })
+  const [isLoading, setIsLoading] = useState(false)
   const [isEmailError, setIsEmailError] = useState(false)
   const [isSendDisable, setIsSendDisable] = useState(true)
 
@@ -37,24 +38,23 @@ export default function Contact() {
 
   const sendHandler = async (e) => {
     e.preventDefault()
+    setIsLoading(true)
 
     try {
-      const token = captchaRef.current.getValue()
-      captchaRef.current.reset()
       await axios
-        .post(
-          `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${token}`
-        )
-        .then((res) => {
-          console.log(res.status)
+        .post("/api/send", { token: captchaRef.current.getValue() })
+        .then(async (res) => {
+          captchaRef.current.reset()
+          
         })
     } catch (error) {
       console.log("Error sending email: ", error)
     }
   }
 
-  const onChange = (value) => {
-    console.log("Captcha value:", value)
+  const recaptchaHandler = () => {
+    const token = captchaRef.current.getValue()
+    console.log(token)
   }
 
   return (
@@ -109,21 +109,18 @@ export default function Contact() {
               placeholder="Message"
               onChange={(e) => setForm({ ...form, message: e.target.value })}
             />
-            <div className="flex space-x-5">
-              <Input value={"0 + 1"} isDisable={true} w={"w-1/2"} />
-              <p>=</p>
-              <Input placeholder={"asd"} w={"w-1/2"} />
+            <div className="w-full flex justify-center">
+              <ReCAPTCHA
+                sitekey={process.env.RECAPTCHA_SITE_KEY}
+                ref={captchaRef}
+                onChange={recaptchaHandler}
+              />
             </div>
-            <ReCAPTCHA
-              sitekey={process.env.RECAPTCHA_SITE_KEY}
-              onChange={onChange}
-              ref={captchaRef}
-            />
           </div>
           <Button
             title={"Send Massage"}
             isLoading={false}
-            isDisable={isSendDisable}
+            // isDisable={isSendDisable}
           />
         </form>
       </div>
