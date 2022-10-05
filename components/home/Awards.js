@@ -22,39 +22,21 @@ const awards = [
     icon: faGraduationCap,
   },
   {
-    name: "Outstanding Academic Performance Year 2019",
+    name: "Outstanding Academic Performance",
     description:
       "Award for students who have achieved academic excellence by maintaining a 10 cumulative A grades",
     organization: "University of Phayao",
-    date: "2019",
+    date: "2019, 2021",
     type: "",
     icon: faAward,
   },
   {
-    name: "Good Academic Performance Year 2020",
+    name: "Good Academic Performance",
     description:
       "Award for students who have achieved academic excellence by maintaining a level of 3.5 cumulative GPA in a single year.",
     organization: "University of Phayao",
-    date: "2020",
+    date: "2020 - 2021",
     type: "Academic Achievement Awards",
-    icon: faAward,
-  },
-  {
-    name: "Good Academic Performance Year 2021",
-    description:
-      "Award for students who have achieved academic excellence by maintaining a level of 3.5 cumulative GPA in a single year.",
-    organization: "University of Phayao",
-    date: "2021",
-    type: "Academic Achievement Awards",
-    icon: faAward,
-  },
-  {
-    name: "Outstanding Academic Performance Year 2021",
-    description:
-      "Award for students who have achieved academic excellence by maintaining a 10 cumulative A grades",
-    organization: "University of Phayao",
-    date: "2021",
-    type: "",
     icon: faAward,
   },
   {
