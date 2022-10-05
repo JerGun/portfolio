@@ -8,6 +8,7 @@ import {
   faGraduationCap,
   faRocket,
   faAward,
+  faCertificate,
 } from "@fortawesome/free-solid-svg-icons"
 import { useState } from "react"
 import useOnScreen from "lib/useOnScreen"
@@ -116,6 +117,20 @@ export default function Navbar({
             }
           />
           <OptionButton
+            width={"80px"}
+            name={"Certificates"}
+            icon={faCertificate}
+            onClick={() => executeScroll(awardRef)}
+            onMouseEnter={() => setIsAwardHover(true)}
+            onMouseLeave={() => setIsAwardHover(false)}
+            condition={
+              (!isSkillsVisible &&
+                !isWorkVisible &&
+                !isExperienceVisible &&
+                isAwardVisible) | isAwardHover
+            }
+          />
+          <OptionButton
             width={"70px"}
             name={"Education"}
             icon={faGraduationCap}
@@ -133,7 +148,7 @@ export default function Navbar({
           <OptionButton
             name={"Contact"}
             icon={faEnvelope}
-            onClick={() => executeScroll(educationRef)}
+            onClick={() => executeScroll(contactRef)}
             onMouseEnter={() => setIsContactHover(true)}
             onMouseLeave={() => setIsContactHover(false)}
             condition={

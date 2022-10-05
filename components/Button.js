@@ -1,11 +1,11 @@
 import React from "react"
 
-export default function Button({ title, onClick, isLoading }) {
+export default function Button({ title, onClick, isLoading, isDisable }) {
   return (
     <button
-      className="h-12 w-fit flex items-center justify-center font-bold rounded-lg px-10 bg-primary text-black"
+      className={`${isDisable && "bg-customGrayLight"} h-12 w-56 flex items-center justify-center font-bold transition-all duration-500 ease-in-out rounded-lg px-10 bg-primary text-black`}
       onClick={onClick}
-      disabled={isLoading}
+      disabled={isLoading || isDisable}
     >
       {isLoading ? (
         <svg

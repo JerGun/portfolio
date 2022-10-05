@@ -28,7 +28,7 @@ export default function Education() {
         {educations.map((education, i) => (
           <div className="h-fit w-full space-y-12" key={i}>
             <div className="h-fit w-full space-y-5">
-              <p className="text-customGrayLight">{education.date}</p>
+              <p className="text-primary">{education.date}</p>
               {education.archievement && (
                 <div className="flex items-center space-x-3">
                   <FontAwesomeIcon icon={faTrophy} className="text-primary" />

@@ -33,14 +33,21 @@ export default function Projects({ title, projects, active }) {
             className="h-full rounded-xl flex flex-col justify-between bg-customGrayHeavy transition duration-500 ease-in-out hover:scale-105"
             key={i}
           >
-            <div className="h-[300px] w-full rounded-t-xl">
+            <div className="relative h-[300px] w-full rounded-t-xl">
               <img
                 src={project.img}
                 alt={project.name}
-                className={`h-full w-full rounded-t-xl ${
+                className={`absolute h-full w-full z-10 rounded-t-xl ${
                   project.style ? project.style : "object-cover object-center"
                 }`}
               />
+              {project.mobile && <div className="absolute h-full w-full z-0 top-0 py-12">
+                <img
+                  src={project.img}
+                  alt={project.name}
+                  className="h-full w-full rounded-t-xl object-cover blur scale-125"
+                />
+              </div>}
             </div>
             <div className="h-fit p-5 space-y-3">
               <div className="flex items-center justify-between space-x-3">

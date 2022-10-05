@@ -54,6 +54,7 @@ const projects = [
     active: false,
     status: "archive",
     style: "object-contain",
+    mobile: true
   },
   {
     name: "Covid19",
@@ -67,6 +68,7 @@ const projects = [
     active: false,
     status: "archive",
     style: "object-contain",
+    mobile: true
   },
   {
     name: "UDIX",
@@ -92,6 +94,7 @@ const projects = [
     active: false,
     status: "archive",
     style: "object-contain",
+    mobile: true
   },
 ]
 

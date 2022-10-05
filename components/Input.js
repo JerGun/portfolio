@@ -6,7 +6,16 @@ import {
 } from "@fortawesome/free-solid-svg-icons"
 import { useState } from "react"
 
-export default function Input({ h, w, type, placeholder, onChange, icon }) {
+export default function Input({
+  h,
+  w,
+  type,
+  placeholder,
+  value,
+  onChange,
+  icon,
+  isDisable,
+}) {
   const [isShow, setIsShow] = useState(false)
 
   return (
@@ -26,6 +35,8 @@ export default function Input({ h, w, type, placeholder, onChange, icon }) {
         placeholder={placeholder}
         className="w-full bg-transparent outline-none"
         onChange={onChange}
+        disabled={isDisable}
+        value={value}
       />
       {icon && <FontAwesomeIcon icon={icon} />}
       {type == "password" && (
