@@ -10,67 +10,40 @@ import { TypeAnimation } from "react-type-animation"
 import SocialButton from "./hero/SocialButton"
 import TiltPhase from "./TiltPhase"
 
+const highlights = [
+  "Software Engineer",
+  3000,
+  "Fullstack Developer",
+  3000,
+  "Web Developer",
+  3000,
+]
+
 export default function Hero() {
-  const [bios, setBios] = useState([])
-  const [highlights, setHighlights] = useState([])
-  const [isLoading, setIsLoading] = useState(true)
-
-  useEffect(() => {
-    fetchData()
-  }, [])
-
-  const fetchData = async () => {
-    await axios.get("/api/bio").then((res) => {
-      let bios = []
-      res.data.forEach((e) => {
-        bios.push(e)
-      })
-      setBios(bios)
-    })
-    await axios.get("/api/highlight").then((res) => {
-      let highlights = []
-      res.data.forEach((e) => {
-        highlights.push(e.title)
-        highlights.push(3000)
-      })
-      setHighlights(highlights)
-    })
-    setIsLoading(false)
-  }
-
   return (
     <div className="h-screen w-full flex p-10">
       <div className="h-full w-1/2 flex flex-col items-center space-y-14 py-14 pl-20">
         <div className="space-y-10">
           <div className="space-y-5">
-            {bios.map((bio, i) => (
-              <div key={i}>
-                {bio.title == "Sentence 1" && (
-                  <div className="animate-bounce-five flex mb-5">
-                    <p className="text-5xl font-bold ">
-                      {bio.description.substring(0, bio.description.length - 1)}
-                    </p>
-                    <p className="text-5xl font-bold text-primary ">
-                      {bio.description.slice(-1)}
-                    </p>
-                  </div>
-                )}
-                <div className="flex space-x-5">
-                  {bio.title == "Sentence 2" && (
-                    <>
-                      <span className="h-0.5 w-10 mt-3 bg-white"></span>
-                      <p className="w-11/12">{bio.description}</p>
-                    </>
-                  )}
-                  {bio.title == "Sentence 3" && (
-                    <>
-                      <span className="w-10"></span>
-                      <p className="w-11/12">{bio.description}</p>
-                    </>
-                  )}
-                </div>
-              </div>
-            ))}
+            <div className="animate-bounce-five flex mb-5">
+              <p className="text-5xl font-bold ">Hi there</p>
+              <p className="text-5xl font-bold text-primary ">!</p>
+            </div>
+            <div className="flex space-x-5">
+              <span className="h-0.5 w-10 mt-3 bg-white"></span>
+              <p className="w-11/12">
+                I'm a web developer from Thailand. I describe myself as a
+                passionate developer who loves coding and always learning about
+                new technologies.
+              </p>
+            </div>
+            <div className="flex space-x-5">
+              <span className="w-10"></span>
+              <p className="w-11/12">
+                In my spare time I often listen to music, play games, watch
+                anime or learn some new technologies.
+              </p>
+            </div>
           </div>
           <div className="w-full text-lg flex flex-col items-center">
             <div className="flex space-x-2">
@@ -132,17 +105,16 @@ export default function Hero() {
           <p className="text-2xl font-bold">Pawaret Muengkaew</p>
           <p className="">April 18th, 2001</p>
           <p className="text-customGrayLight">@pawaret.dev</p>
-          {!isLoading && (
-            <TypeAnimation
-              cursor={false}
-              sequence={highlights}
-              speed={40}
-              style={{ fontSize: "1.25rem" }}
-              wrapper="p"
-              repeat={Infinity}
-              className=" text-primary"
-            />
-          )}
+
+          <TypeAnimation
+            cursor={false}
+            sequence={highlights}
+            speed={40}
+            style={{ fontSize: "1.25rem" }}
+            wrapper="p"
+            repeat={Infinity}
+            className=" text-primary"
+          />
         </div>
       </div>
     </div>
