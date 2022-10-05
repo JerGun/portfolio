@@ -3,7 +3,9 @@ import React from "react"
 export default function Button({ title, onClick, isLoading, isDisable }) {
   return (
     <button
-      className={`${isDisable && "bg-customGrayLight"} h-12 w-56 flex items-center justify-center font-bold transition-all duration-500 ease-in-out rounded-lg px-10 bg-primary text-black`}
+      className={`${
+        isDisable ? "bg-customGrayLight" : "bg-primary"
+      } h-12 w-56 flex items-center justify-center font-bold transition-all duration-500 ease-in-out rounded-lg px-10 text-black`}
       onClick={onClick}
       disabled={isLoading || isDisable}
     >

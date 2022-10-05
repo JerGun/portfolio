@@ -22,6 +22,7 @@ export default function Navbar({
   workRef,
   experienceRef,
   awardRef,
+  certificateRef,
   educationRef,
   contactRef,
 }) {
@@ -29,6 +30,7 @@ export default function Navbar({
   const isWorkVisible = useOnScreen(workRef)
   const isExperienceVisible = useOnScreen(experienceRef)
   const isAwardVisible = useOnScreen(awardRef)
+  const isCertificateVisible = useOnScreen(certificateRef)
   const isEducationVisible = useOnScreen(educationRef)
   const isContactVisible = useOnScreen(contactRef)
 
@@ -36,6 +38,7 @@ export default function Navbar({
   const [isWorkHover, setIsWorkHover] = useState(false)
   const [isExperienceHover, setIsExperienceHover] = useState(false)
   const [isAwardHover, setIsAwardHover] = useState(false)
+  const [isCertificateHover, setIsCertificateHover] = useState(false)
   const [isEducationHover, setIsEducationHover] = useState(false)
   const [isContactHover, setIsContactHover] = useState(false)
 
@@ -120,14 +123,15 @@ export default function Navbar({
             width={"80px"}
             name={"Certificates"}
             icon={faCertificate}
-            onClick={() => executeScroll(awardRef)}
-            onMouseEnter={() => setIsAwardHover(true)}
-            onMouseLeave={() => setIsAwardHover(false)}
+            onClick={() => executeScroll(certificateRef)}
+            onMouseEnter={() => setIsCertificateHover(true)}
+            onMouseLeave={() => setIsCertificateHover(false)}
             condition={
               (!isSkillsVisible &&
                 !isWorkVisible &&
                 !isExperienceVisible &&
-                isAwardVisible) | isAwardHover
+                !isAwardVisible &&
+                isCertificateVisible) | isCertificateHover
             }
           />
           <OptionButton
@@ -142,6 +146,7 @@ export default function Navbar({
                 !isWorkVisible &&
                 !isExperienceVisible &&
                 !isAwardVisible &&
+                !isCertificateVisible &&
                 isEducationVisible) | isEducationHover
             }
           />
@@ -156,6 +161,7 @@ export default function Navbar({
                 !isWorkVisible &&
                 !isExperienceVisible &&
                 !isAwardVisible &&
+                !isCertificateVisible &&
                 !isEducationVisible &&
                 isContactVisible) | isContactHover
             }

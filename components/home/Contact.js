@@ -30,7 +30,7 @@ export default function Contact() {
       form.name.length != 0 &&
       form.email.length != 0 &&
       form.message.length != 0 &&
-      !isEmailError
+      isEmailError
     )
       setIsSendDisable(false)
     else setIsSendDisable(true)
@@ -45,16 +45,11 @@ export default function Contact() {
         .post("/api/send", { token: captchaRef.current.getValue() })
         .then(async (res) => {
           captchaRef.current.reset()
-          
+          setIsLoading(false)
         })
     } catch (error) {
       console.log("Error sending email: ", error)
     }
-  }
-
-  const recaptchaHandler = () => {
-    const token = captchaRef.current.getValue()
-    console.log(token)
   }
 
   return (
@@ -113,14 +108,13 @@ export default function Contact() {
               <ReCAPTCHA
                 sitekey={process.env.RECAPTCHA_SITE_KEY}
                 ref={captchaRef}
-                onChange={recaptchaHandler}
               />
             </div>
           </div>
           <Button
-            title={"Send Massage"}
-            isLoading={false}
-            // isDisable={isSendDisable}
+            title={"Send Message"}
+            isLoading={isLoading}
+            isDisable={isSendDisable}
           />
         </form>
       </div>
