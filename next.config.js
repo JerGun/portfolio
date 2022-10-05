@@ -14,6 +14,8 @@ const nextConfig = {
   env: {
     INFURA_PROJECT_ID: process.env.INFURA_PROJECT_ID,
     INFURA_API_KEY: process.env.INFURA_API_KEY,
+    RECAPTCHA_SITE_KEY: process.env.RECAPTCHA_SITE_KEY,
+    RECAPTCHA_SECRET_KEY: process.env.RECAPTCHA_SECRET_KEY,
   },
   eslint: {
     ignoreDuringBuilds: true,
