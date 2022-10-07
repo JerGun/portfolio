@@ -14,10 +14,6 @@ export default function Certificates() {
   const [payload, setPayload] = useState({})
   const [isLoading, setIsLoading] = useState(false)
 
-  useEffect(() => {
-    watchLocalStorage()
-  }, [localStorage])
-
   const watchLocalStorage = () => {
     setPayload({ ...payload, image: localStorage.getItem("file") })
     console.log(localStorage.getItem("file"))
