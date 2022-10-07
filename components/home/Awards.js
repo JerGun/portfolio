@@ -82,33 +82,32 @@ export default function Awards() {
   const [imageIndex, setImageIndex] = useState(null)
 
   return (
-    <div className="relativeh-full w-full flex flex-col items-center py-20 space-y-16">
-      <div className="absolute h-full w-full">
-        {awards.map((award, i) =>
-          imageIndex == i ? (
-            award.images?.length > 1 ? (
+    <div className="relative h-full w-full flex flex-col items-center py-20 space-y-16">
+      {awards.map((award, i) =>
+        imageIndex == i ? (
+          award.images?.length > 1 ? (
+            <Lightbox
+              images={award.images}
+              onClose={() => {
+                setImageIndex(null)
+              }}
+              key={i}
+              className="absolute"
+            />
+          ) : (
+            award.images.map((image, j) => (
               <Lightbox
-                images={award.images}
+                title={image.title}
+                image={image.url}
                 onClose={() => {
                   setImageIndex(null)
                 }}
-                key={i}
+                key={j}
               />
-            ) : (
-              award.images.map((image, j) => (
-                <Lightbox
-                  title={image.title}
-                  image={image.url}
-                  onClose={() => {
-                    setImageIndex(null)
-                  }}
-                  key={j}
-                />
-              ))
-            )
-          ) : null
-        )}
-      </div>
+            ))
+          )
+        ) : null
+      )}
       <p className="text-4xl font-bold capitalize">Awards</p>
       <div className="h-full w-10/12 flex justify-center items-center">
         <Swiper
