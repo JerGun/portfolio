@@ -83,33 +83,8 @@ export default function Awards() {
 
   return (
     <div className="relative h-full w-full flex flex-col items-center py-20 space-y-16">
-      {awards.map((award, i) =>
-        imageIndex == i ? (
-          award.images?.length > 1 ? (
-            <Lightbox
-              images={award.images}
-              onClose={() => {
-                setImageIndex(null)
-              }}
-              key={i}
-              className="absolute"
-            />
-          ) : (
-            award.images.map((image, j) => (
-              <Lightbox
-                title={image.title}
-                image={image.url}
-                onClose={() => {
-                  setImageIndex(null)
-                }}
-                key={j}
-              />
-            ))
-          )
-        ) : null
-      )}
       <p className="text-4xl font-bold capitalize">Awards</p>
-      <div className="h-full w-10/12 flex justify-center items-center">
+      <div className="h-full w-9/12 flex justify-center items-center">
         <Swiper
           slidesPerView={3}
           // initialSlide={1}
@@ -117,19 +92,19 @@ export default function Awards() {
           centeredSlides={true}
           spaceBetween={100}
           speed={1200}
-          keyboard={{
-            enabled: true,
-          }}
-          // autoplay={{
-          //   delay: 4000,
-          //   disableOnInteraction: false,
+          // keyboard={{
+          //   enabled: true,
           // }}
+          autoplay={{
+            delay: 4000,
+            disableOnInteraction: false,
+          }}
           modules={[Autoplay, Keyboard]}
           className="h-full"
         >
           {awards.map((award, i) => (
             <SwiperSlide key={i}>
-              <div className="relative h-[375px] w-full flex items-end">
+              <div className="relative h-[400px] w-full flex items-end">
                 <div className="absolute h-12 w-12 top-0 left-1/2 transform -translate-x-1/2 flex items-center justify-center rounded-full shadow-md bg-primary">
                   <FontAwesomeIcon
                     icon={award.icon}
@@ -137,7 +112,7 @@ export default function Awards() {
                     size="lg"
                   />
                 </div>
-                <div className="h-[350px] w-full p-5 pt-10 space-y-5 text-center rounded-xl bg-customGrayHeavy">
+                <div className="h-[375px] w-full p-5 pt-10 space-y-5 text-center rounded-xl bg-customGrayHeavy">
                   <div className="h-[50%] flex flex-col items-center space-y-3">
                     <p className="text-xl font-bold">{award.name}</p>
                     <p>{award.organization}</p>
@@ -166,6 +141,32 @@ export default function Awards() {
             </SwiperSlide>
           ))}
         </Swiper>
+      </div>
+      <div className="absolute">
+        {awards.map((award, i) =>
+          imageIndex == i ? (
+            award.images?.length > 1 ? (
+              <Lightbox
+                images={award.images}
+                onClose={() => {
+                  setImageIndex(null)
+                }}
+                key={i}
+              />
+            ) : (
+              award.images.map((image, j) => (
+                <Lightbox
+                  title={image.title}
+                  image={image.url}
+                  onClose={() => {
+                    setImageIndex(null)
+                  }}
+                  key={j}
+                />
+              ))
+            )
+          ) : null
+        )}
       </div>
     </div>
   )

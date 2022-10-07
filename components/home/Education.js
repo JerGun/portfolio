@@ -24,7 +24,7 @@ export default function Education() {
   return (
     <div className="h-full w-full flex flex-col items-center py-20 space-y-16">
       <p className="text-4xl font-bold capitalize">Education</p>
-      <div className="w-7/12 flex flex-col justify-center space-y-12">
+      <div className="w-9/12 flex flex-col justify-center space-y-12">
         {educations.map((education, i) => (
           <div className="h-fit w-full space-y-12" key={i}>
             <div className="h-fit w-full space-y-5">

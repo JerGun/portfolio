@@ -99,34 +99,10 @@ const projects = [
 ]
 
 export default function Works() {
-  // const [projects, setProjects] = useState([])
-  useEffect(() => {
-    fetchData()
-  }, [])
-
-  const fetchData = async () => {
-    // await axios.get("/api/bio").then((res) => {
-    //   let bios = []
-    //   res.data.forEach((e) => {
-    //     bios.push(e)
-    //   })
-    //   setBios(bios)
-    // })
-    // await axios.get("/api/highlight").then((res) => {
-    //   let highlights = []
-    //   res.data.forEach((e) => {
-    //     highlights.push(e.title)
-    //     highlights.push(3000)
-    //   })
-    //   setHighlights(highlights)
-    // })
-    // setIsLoading(false)
-  }
-
   return (
     <div className="h-full w-full flex flex-col items-center py-20 space-y-16">
       <p className="text-4xl font-bold capitalize">Works</p>
-      <div className="w-full space-y-20 px-32">
+      <div className="w-9/12 space-y-20">
         {/* <div className="h-16 w-fit space-x-3 px-10 flex items-center justify-center rounded-xl  text-black bg-white shadow-xl border border-customGrayLight">
           <span class="relative flex h-3 w-3">
             <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>

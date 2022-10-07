@@ -13,7 +13,7 @@ console.log(projectId)
 console.log(projectSecret)
 
 const client = ipfsHttpClient({
-  host: "ipfs.infura.io",
+  host: "infura-ipfs.io",
   port: 5001,
   protocol: "https",
   headers: {
@@ -39,7 +39,8 @@ export default function UploadFile({ type }) {
           },
         })
         .then((res) => {
-          const url = `https://ipfs.infura.io/ipfs/${res.path}`
+          const url = `https://infura-ipfs.io/ipfs/${res.path}`
+          console.log(url)
           setImage({ ...image, preview: url, raw: file })
           setValue(0)
         })
@@ -79,13 +80,13 @@ export default function UploadFile({ type }) {
   }
 
   return (
-    <div className="h-full w-1/2 flex flex-col items-center space-y-10">
-      <Input
+    <div className="h-fit w-full flex flex-col items-center space-y-10">
+      {/* <Input
         placeholder={"Title"}
         w={"w-3/4"}
         onChange={(e) => setTitle(e.target.value)}
-      />
-      <div className="h-1/2 w-full">
+      /> */}
+      <div className="h-[300px] w-full">
         <div className="relative h-full w-full">
           <label
             htmlFor="upload-button"
@@ -127,7 +128,6 @@ export default function UploadFile({ type }) {
           style={{ width: `${value}%` }}
         ></div>
       </div>
-      <Button title={"Save"} isLoading={isLoading} onClick={uploadFile} />
     </div>
   )
 }

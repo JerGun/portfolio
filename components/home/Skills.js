@@ -163,9 +163,10 @@ export default function Skills() {
   return (
     <div className="h-full w-full flex flex-col items-center py-20 space-y-16">
       <p className="text-4xl font-bold">Skills</p>
-      <div className="w-full grid grid-cols-4 justify-center divide-x divide-opacity-30 px-32 divide-white">
-        <DevSkills title="Backend Dev" skills={backendSkills} />
-        {/* <div className="h-full w-full flex flex-col items-center space-y-10">
+      <div className="w-9/12 flex flex-col items-center space-y-16">
+        <div className="w-full grid grid-cols-4 justify-center divide-x divide-opacity-30 divide-white">
+          <DevSkills title="Backend Dev" skills={backendSkills} />
+          {/* <div className="h-full w-full flex flex-col items-center space-y-10">
             <div className="h-fit w-fit flex flex-col items-center space-y-5">
               <FontAwesomeIcon
                 icon={faGamepad}
@@ -176,51 +177,52 @@ export default function Skills() {
             </div>
             <SkillItem icon={<Unity />} name="Unity" />
           </div> */}
-        <DevSkills title="Frontend Dev" skills={frontendSkills} />
-      </div>
-      <span className="h-[0.5px] w-10/12 bg-white bg-opacity-30"></span>
-      <div className="w-full grid grid-cols-7 justify-center divide-x divide-opacity-30 px-20 divide-white">
-        <div className="h-full w-full flex flex-col items-center col-span-2 space-y-5">
-          <div className="h-fit w-fit flex flex-col items-center space-y-5">
-            <FontAwesomeIcon
-              icon={faCodeBranch}
-              size="2x"
-              className="text-primary"
-            />
-            <p className="text-xl font-bold">Version Control</p>
-          </div>
-          <div className="w-full grid grid-cols-2 place-items-center gap-10">
-            <SkillItem icon={<GitHub />} name="GitHub" />
-            <SkillItem icon={<GitLab />} name="GitLab" />
-          </div>
+          <DevSkills title="Frontend Dev" skills={frontendSkills} />
         </div>
-        <div className="h-full w-full flex flex-col items-center col-span-3 space-y-5">
-          <div className="h-fit w-fit flex flex-col items-center space-y-5">
-            <FontAwesomeIcon
-              icon={faCloud}
-              size="2x"
-              className="text-primary"
-            />
-            <p className="text-xl font-bold">Hosting</p>
+        <span className="h-[0.5px] w-full bg-white bg-opacity-30"></span>
+        <div className="w-full grid grid-cols-7 justify-center divide-x divide-opacity-30 divide-white">
+          <div className="h-full w-full flex flex-col items-center col-span-2 space-y-5">
+            <div className="h-fit w-fit flex flex-col items-center space-y-5">
+              <FontAwesomeIcon
+                icon={faCodeBranch}
+                size="2x"
+                className="text-primary"
+              />
+              <p className="text-xl font-bold">Version Control</p>
+            </div>
+            <div className="w-full grid grid-cols-2 place-items-center gap-10">
+              <SkillItem icon={<GitHub />} name="GitHub" />
+              <SkillItem icon={<GitLab />} name="GitLab" />
+            </div>
           </div>
-          <div className="grid grid-cols-3 place-items-center gap-10 px-10">
-            <SkillItem icon={<Heroku />} name="Heroku" />
-            <SkillItem icon={<GitHubPages />} name="GitHub Pages" />
-            <SkillItem icon={<Vercel />} name="Vercel" />
+          <div className="h-full w-full flex flex-col items-center col-span-3 space-y-5">
+            <div className="h-fit w-fit flex flex-col items-center space-y-5">
+              <FontAwesomeIcon
+                icon={faCloud}
+                size="2x"
+                className="text-primary"
+              />
+              <p className="text-xl font-bold">Hosting</p>
+            </div>
+            <div className="grid grid-cols-3 place-items-center gap-10 px-10">
+              <SkillItem icon={<Heroku />} name="Heroku" />
+              <SkillItem icon={<GitHubPages />} name="GitHub Pages" />
+              <SkillItem icon={<Vercel />} name="Vercel" />
+            </div>
           </div>
-        </div>
-        <div className="h-full w-full flex flex-col items-center col-span-2 space-y-5">
-          <div className="h-fit w-fit flex flex-col items-center space-y-5">
-            <FontAwesomeIcon
-              icon={faCodeBranch}
-              size="2x"
-              className="text-primary"
-            />
-            <p className="text-xl font-bold">CI/CD</p>
-          </div>
-          <div className="w-full grid grid-cols-2 place-items-center gap-10">
-            <SkillItem icon={<GitHub />} name="GitHub Action" />
-            <SkillItem icon={<GitLab />} name="GitLab CI" />
+          <div className="h-full w-full flex flex-col items-center col-span-2 space-y-5">
+            <div className="h-fit w-fit flex flex-col items-center space-y-5">
+              <FontAwesomeIcon
+                icon={faCodeBranch}
+                size="2x"
+                className="text-primary"
+              />
+              <p className="text-xl font-bold">CI/CD</p>
+            </div>
+            <div className="w-full grid grid-cols-2 place-items-center gap-10">
+              <SkillItem icon={<GitHub />} name="GitHub Action" />
+              <SkillItem icon={<GitLab />} name="GitLab CI" />
+            </div>
           </div>
         </div>
       </div>

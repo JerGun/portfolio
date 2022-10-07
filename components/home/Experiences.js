@@ -63,9 +63,9 @@ const experiences = [
 
 export default function Experiences() {
   return (
-    <div className="h-full w-full flex flex-col items-center py-20 px-32 space-y-16">
+    <div className="h-full w-full flex flex-col items-center py-20 space-y-16">
       <p className="text-4xl font-bold capitalize">Experiences</p>
-      <div className="w-full">
+      <div className="w-9/12">
         {experiences.map((experience, i) => (
           <div className="h-fit w-full flex" key={i}>
             <div className="h-full w-5/12 space-y-3 px-10">
