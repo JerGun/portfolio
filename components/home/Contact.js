@@ -14,10 +14,11 @@ export default function Contact() {
   const [isLoading, setIsLoading] = useState(false)
   const [isEmailError, setIsEmailError] = useState(false)
   const [isSendDisable, setIsSendDisable] = useState(true)
+  const [isReCaptchaVerified, setIsReCaptchaVerified] = useState(false)
 
   useEffect(() => {
     checkForm()
-  }, [form])
+  }, [form, isReCaptchaVerified])
 
   const checkForm = () => {
     const pattern =
@@ -31,10 +32,20 @@ export default function Contact() {
       form.name.length != 0 &&
       form.email.length != 0 &&
       form.message.length != 0 &&
-      !isEmailError
+      !isEmailError &&
+      isReCaptchaVerified
     )
       setIsSendDisable(false)
     else setIsSendDisable(true)
+  }
+
+  const verifyRecaptcha = async () => {
+    await axios
+      .post("/api/send", { token: captchaRef.current.getValue() })
+      .then((res) => {
+        console.log(res)
+        setIsReCaptchaVerified(res.data)
+      })
   }
 
   const sendHandler = async (e) => {
@@ -42,21 +53,50 @@ export default function Contact() {
     setIsLoading(true)
 
     try {
-      await axios
-        .post("/api/send", { token: captchaRef.current.getValue() })
-        .then(() => {
-          emailjs
-            .send(
-              process.env.EMAILJS_SERVICE_ID,
-              process.env.EMAILJS_TEMPLATE_ID,
-              form,
-              process.env.EMAILJS_PUBLIC_KEY
-            )
-            .then((result) => {
-              console.log(result)
-              captchaRef.current.reset()
-              setIsLoading(false)
-            })
+      const payload = {
+        content: "",
+        embeds: [
+          {
+            title: `New Message from ${form.name}`,
+            color: 16761856,
+            fields: [
+              {
+                name: "Name",
+                value: form.name,
+              },
+              {
+                name: "Email",
+                value: form.email,
+              },
+              {
+                name: "Message",
+                value: form.message,
+              },
+            ],
+            footer: {
+              text: "pawaret.dev",
+              icon_url:
+                "https://firebasestorage.googleapis.com/v0/b/pawaret-portfolio.appspot.com/o/favicon.ico?alt=media&token=1e9f2b46-60c6-46c5-9c40-7a347579c44b",
+            },
+            timestamp: new Date(),
+          },
+        ],
+        username: "PawaretDev Bot",
+        attachments: [],
+      }
+      await axios.post(process.env.DISCORD_WEBHOOK, payload)
+
+      emailjs
+        .send(
+          process.env.EMAILJS_SERVICE_ID,
+          process.env.EMAILJS_TEMPLATE_ID,
+          form,
+          process.env.EMAILJS_PUBLIC_KEY
+        )
+        .then((result) => {
+          console.log(result)
+          captchaRef.current.reset()
+          setIsLoading(false)
         })
     } catch (error) {
       console.log("Error sending email: ", error)
@@ -119,6 +159,7 @@ export default function Contact() {
               <ReCAPTCHA
                 sitekey={process.env.RECAPTCHA_SITE_KEY}
                 ref={captchaRef}
+                onChange={verifyRecaptcha}
               />
             </div>
           </div>
