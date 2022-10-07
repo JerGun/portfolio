@@ -50,7 +50,9 @@ export default function Certificates() {
   return (
     <div className="h-full w-full flex flex-col items-center py-20 space-y-16">
       <p className="text-4xl font-bold capitalize">Certificates</p>
-      <div className="h-full w-10/12 flex justify-center items-center"></div>
+      <div className="h-full w-10/12 flex justify-center items-center text-4xl">
+        Coming Soon!
+      </div>
     </div>
   )
 }

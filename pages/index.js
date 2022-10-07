@@ -64,7 +64,7 @@ export default function Home() {
           <div ref={skillRef} className="h-full w-full">
             <Skills />
           </div>
-          <div id="work" ref={workRef} className="h-full w-full">
+          <div ref={workRef} className="h-full w-full">
             <Works />
           </div>
           <div ref={experienceRef} className="h-full w-full">

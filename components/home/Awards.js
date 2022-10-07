@@ -1,6 +1,7 @@
 import {
   faAward,
   faGraduationCap,
+  faImage,
   faTrophy,
 } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
@@ -15,7 +16,7 @@ const awards = [
   {
     name: "Scholarship",
     description:
-      "Scholarship for students who have achieved academic excellence by maintaining a 3.5 cumulative GPA",
+      "Scholarship for students who have achieved academic excellence by maintaining a 3.5 cumulative GPAX",
     organization: "University of Phayao",
     date: "2019 - 2022",
     type: "Scholarship",
@@ -57,17 +58,17 @@ export default function Awards() {
         <Swiper
           slidesPerView={3}
           // initialSlide={1}
+          // grabCursor={true}
           centeredSlides={true}
           spaceBetween={100}
           speed={1200}
-          grabCursor={true}
           keyboard={{
             enabled: true,
           }}
-          autoplay={{
-            delay: 4000,
-            disableOnInteraction: false,
-          }}
+          // autoplay={{
+          //   delay: 4000,
+          //   disableOnInteraction: false,
+          // }}
           modules={[Autoplay, Keyboard]}
           className="h-full"
         >
@@ -89,6 +90,11 @@ export default function Awards() {
                   </div>
                   <div className="h-0.5 w-full bg-customGrayLight opacity-50"></div>
                   <p>{award.description}</p>
+                  <div className="w-full flex justify-center">
+                    <button onClick={() => {}}>
+                      <FontAwesomeIcon icon={faImage} className="" size="lg" />
+                    </button>
+                  </div>
                 </div>
               </div>
             </SwiperSlide>

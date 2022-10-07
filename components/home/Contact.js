@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import axios from "axios"
 import React, { useEffect, useRef, useState } from "react"
 import ReCAPTCHA from "react-google-recaptcha"
+import emailjs from "@emailjs/browser"
 
 export default function Contact() {
   const captchaRef = useRef(null)
@@ -30,7 +31,7 @@ export default function Contact() {
       form.name.length != 0 &&
       form.email.length != 0 &&
       form.message.length != 0 &&
-      isEmailError
+      !isEmailError
     )
       setIsSendDisable(false)
     else setIsSendDisable(true)
@@ -43,9 +44,19 @@ export default function Contact() {
     try {
       await axios
         .post("/api/send", { token: captchaRef.current.getValue() })
-        .then(async (res) => {
-          captchaRef.current.reset()
-          setIsLoading(false)
+        .then(() => {
+          emailjs
+            .send(
+              process.env.EMAILJS_SERVICE_ID,
+              process.env.EMAILJS_TEMPLATE_ID,
+              form,
+              process.env.EMAILJS_PUBLIC_KEY
+            )
+            .then((result) => {
+              console.log(result)
+              captchaRef.current.reset()
+              setIsLoading(false)
+            })
         })
     } catch (error) {
       console.log("Error sending email: ", error)
