@@ -4,7 +4,7 @@ import SkillItem from "./SkillItem"
 
 export default function DevSkills({ title, skills }) {
   return (
-    <div className="h-full w-full flex flex-col col-span-2 items-center space-y-10">
+    <div className="h-full w-full flex flex-col items-center space-y-10">
       <div className="flex flex-col items-center space-y-5">
         <FontAwesomeIcon
           icon={title == "Backend Dev" ? faTerminal : faCode}
@@ -18,9 +18,9 @@ export default function DevSkills({ title, skills }) {
           <div className="w-full flex flex-col items-center space-y-10" key={i}>
             <p className="text-primary capitalize">{skill.header}</p>
             <div
-              className={`w-full grid grid-cols-3 grid-rows-${
+                className={`w-full grid grid-cols-2 grid-rows-${
                 Math.round(skill.items.length / 3) + 1
-              } gap-y-10 place-items-center`}
+              } gap-y-10 place-items-center md:grid-cols-3`}
             >
               {skill.items.map((item, j) => (
                 <SkillItem icon={item.icon} name={item.name} key={j} />

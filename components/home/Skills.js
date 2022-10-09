@@ -117,6 +117,14 @@ const frontendSkills = [
         name: "CSS",
         icon: <CSS />,
       },
+      {
+        name: "",
+        icon: "",
+      },
+      {
+        name: "",
+        icon: "",
+      },
     ],
   },
   {
@@ -155,6 +163,10 @@ const frontendSkills = [
         name: "Headless UI",
         icon: <Headless />,
       },
+      {
+        name: "",
+        icon: "",
+      },
     ],
   },
 ]
@@ -163,8 +175,8 @@ export default function Skills() {
   return (
     <div className="h-full w-full flex flex-col items-center py-20 space-y-16">
       <p className="text-4xl font-bold">Skills</p>
-      <div className="w-9/12 flex flex-col items-center space-y-16">
-        <div className="w-full grid grid-cols-4 justify-center divide-x divide-opacity-30 divide-white">
+      <div className="w-9/12 flex flex-col items-center space-y-20">
+        <div className="h-full w-full flex flex-col justify-center space-y-16 divide-opacity-30 divide-white md:space-y-0 md:divide-x md:flex-row">
           <DevSkills title="Backend Dev" skills={backendSkills} />
           {/* <div className="h-full w-full flex flex-col items-center space-y-10">
             <div className="h-fit w-fit flex flex-col items-center space-y-5">
@@ -179,8 +191,8 @@ export default function Skills() {
           </div> */}
           <DevSkills title="Frontend Dev" skills={frontendSkills} />
         </div>
-        <span className="h-[0.5px] w-full bg-white bg-opacity-30"></span>
-        <div className="w-full grid grid-cols-7 justify-center divide-x divide-opacity-30 divide-white">
+        <span className="h-[0.5px] w-full bg-white bg-opacity-30 hidden md:block"></span>
+        <div className="w-full md:grid grid-cols-7 justify-center space-y-10 md:space-y-0 md:divide-x divide-opacity-30 divide-white">
           <div className="h-full w-full flex flex-col items-center col-span-2 space-y-5">
             <div className="h-fit w-fit flex flex-col items-center space-y-5">
               <FontAwesomeIcon
@@ -204,7 +216,7 @@ export default function Skills() {
               />
               <p className="text-xl font-bold">Hosting</p>
             </div>
-            <div className="grid grid-cols-3 place-items-center gap-10 px-10">
+            <div className="grid grid-cols-1 md:grid-cols-3 place-items-center gap-10 px-10">
               <SkillItem icon={<Heroku />} name="Heroku" />
               <SkillItem icon={<GitHubPages />} name="GitHub Pages" />
               <SkillItem icon={<Vercel />} name="Vercel" />

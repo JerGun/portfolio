@@ -68,24 +68,28 @@ export default function Experiences() {
       <div className="w-9/12">
         {experiences.map((experience, i) => (
           <div className="h-fit w-full flex" key={i}>
-            <div className="h-full w-5/12 space-y-3 px-10">
+            <div className="h-full w-5/12 space-y-3 px-10 py-1.5 hidden lg:block">
               <p className="text-xl font-bold">{experience.company}</p>
               <p className="text-text">{experience.date}</p>
             </div>
-            <div className="h-full w-7/12 flex">
+            <div className="h-full w-full lg:w-7/12 flex">
               <div className="h-full w-fit">
                 <div className="relative h-10 w-10 flex flex-col items-center justify-center">
                   <span className="absolute h-10 w-10 rounded-full border-2 border-dashed"></span>
                   <span className="h-5 w-5 rounded-full bg-primary"></span>
                 </div>
                 <div className="h-full w-10 flex items-center justify-center">
-                  <div className="h-40 w-0 border-[0.1px] border-dashed"></div>
+                  <div className="h-[400px] md:h-60 lg:h-40 w-0 border-[0.1px] border-dashed"></div>
                 </div>
               </div>
-              <div className="w-11/12 px-10 py-1.5 space-y-3">
-                <p className="text-xl font-bold">{experience.title}</p>
+              <div className="h-full w-full md:w-11/12 flex flex-col flex-wrap pl-10 py-1.5">
+                <div className="h-full w-full space-y-3 lg:hidden">
+                  <p className="text-xl font-bold">{experience.company}</p>
+                  <p className="text-text">{experience.date}</p>
+                </div>
+                <p className="md:text-xl font-bold pt-3 md:pt-0">{experience.title}</p>
                 {experience.archievement && (
-                  <div className="flex items-center space-x-3">
+                  <div className="flex items-center space-x-3 pt-3">
                     <FontAwesomeIcon
                       icon={experience.icon}
                       className="text-primary"
@@ -93,7 +97,9 @@ export default function Experiences() {
                     <p>{experience.archievement}</p>
                   </div>
                 )}
-                <p className="text-text">{experience.description}</p>
+                <p className="text-sm pt-3 md:text-base text-text">
+                  {experience.description}
+                </p>
               </div>
             </div>
           </div>

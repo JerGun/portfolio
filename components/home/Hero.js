@@ -7,8 +7,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import axios from "axios"
 import { useEffect, useState } from "react"
 import { TypeAnimation } from "react-type-animation"
-import SocialButton from "./hero/SocialButton"
-import TiltPhase from "./TiltPhase"
+import SocialButton from "../hero/SocialButton"
+import TiltPhase from "../TiltPhase"
 
 const highlights = [
   "Software Engineer",
@@ -21,42 +21,74 @@ const highlights = [
 
 export default function Hero() {
   return (
-    <div className="h-screen w-full flex p-10">
-      <div className="h-full w-1/2 flex flex-col items-center space-y-14 py-14 pl-20">
+    <div className="h-full w-full flex flex-col md:flex-row-reverse md:h-screen transition-all duration-500 ease-in-out md:p-10">
+      <div className="relative h-screen w-full flex flex-col items-center justify-center space-y-10 md:h-full">
+        <div className="relative h-[40%] w-2/3 rounded-xl text-base transition duration-500 ease-in-out hover:scale-105 md:h-[55%">
+          <TiltPhase
+            options={{
+              max: 10,
+              perspective: 800,
+              scale: 1,
+            }}
+          >
+            <img
+              src="/images/pawaret.png"
+              alt=""
+              className="h-full w-full object-contain"
+            />
+          </TiltPhase>
+        </div>
+        <div className="flex flex-col items-center space-y-5">
+          <p className="text-2xl font-bold">Pawaret Muengkaew</p>
+          <p className="">April 18th, 2001</p>
+          <p className="text-customGrayLight">@pawaret.dev</p>
+          <div className="h-10 text-primary">
+            <TypeAnimation
+              cursor={false}
+              sequence={highlights}
+              speed={40}
+              style={{ fontSize: "1.25rem" }}
+              wrapper="p"
+              repeat={Infinity}
+            />
+          </div>
+        </div>
+      </div>
+      <div className="h-full w-full flex flex-col items-center justify-center space-y-14 px-10 pb-10 md:pl-20">
         <div className="space-y-10">
           <div className="space-y-5">
-            <div className="animate-bounce-five flex mb-5">
-              <p className="text-5xl font-bold ">Hi there</p>
-              <p className="text-5xl font-bold text-primary ">!</p>
+            <div className="animate-bounce-five flex mb-5 text-3xl md:text-5xl">
+              <p className="font-bold">Hi there</p>
+              <p className="font-bold text-primary ">!</p>
             </div>
-            <div className="flex space-x-5">
-              <span className="h-0.5 w-10 mt-3 bg-white"></span>
-              <p className="w-11/12">
+            <div className="flex md:space-x-5">
+              <span className="h-0.5 w-10 mt-3 bg-white hidden md:block"></span>
+              <p className="w-full">
                 I'm a web developer from Thailand. I describe myself as a
                 passionate developer who loves coding and always learning about
                 new technologies.
               </p>
             </div>
-            <div className="flex space-x-5">
-              <span className="w-10"></span>
-              <p className="w-11/12">
+            <div className="flex md:space-x-5">
+              <span className="w-10 hidden md:block"></span>
+              <p className="w-full">
                 In my spare time I often listen to music, play games, watch
                 anime or learn some new technologies.
               </p>
             </div>
           </div>
-          <div className="w-full text-lg flex flex-col items-center">
-            <div className="flex space-x-2">
+          <div className="w-full md:text-lg flex flex-col items-center">
+            <div className="flex space-x-2 flex-wrap">
               <FontAwesomeIcon icon={faQuoteLeft} />
               <p>Debugging becomes significantly easier</p>
             </div>
-            <div className="flex space-x-2">
+            <div className="flex space-x-2 flex-wrap">
               <p>if you first admit that you are the problem.</p>
               <FontAwesomeIcon icon={faQuoteRight} />
             </div>
           </div>
         </div>
-        <div className="w-full flex justify-center space-x-20">
+        <div className="w-full flex justify-center space-x-16 md:space-x-20">
           <SocialButton name={"facebook"} />
           <SocialButton name={"github"} />
           <SocialButton name={"gitlab"} />
@@ -84,38 +116,6 @@ export default function Hero() {
             />
           </div>
         </div> */}
-      </div>
-      <div className="relative h-full w-1/2 flex flex-col items-center pt-10 space-y-10">
-        <div className="relative h-[55%] w-1/2 rounded-xl text-base transition duration-500 ease-in-out hover:scale-105">
-          <TiltPhase
-            options={{
-              max: 10,
-              perspective: 800,
-              scale: 1,
-            }}
-          >
-            <img
-              src="/images/pawaret.png"
-              alt=""
-              className="h-full w-full object-contain"
-            />
-          </TiltPhase>
-        </div>
-        <div className="flex flex-col items-center space-y-5">
-          <p className="text-2xl font-bold">Pawaret Muengkaew</p>
-          <p className="">April 18th, 2001</p>
-          <p className="text-customGrayLight">@pawaret.dev</p>
-
-          <TypeAnimation
-            cursor={false}
-            sequence={highlights}
-            speed={40}
-            style={{ fontSize: "1.25rem" }}
-            wrapper="p"
-            repeat={Infinity}
-            className=" text-primary"
-          />
-        </div>
       </div>
     </div>
   )
