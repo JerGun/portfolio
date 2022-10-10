@@ -40,7 +40,7 @@ export default function Home() {
     <div className="h-full w-full bg-background bg-opacity-90">
       <Head>
         <title>Pawaret Muengkaew | Portfolio</title>
-        <meta name="description" content="pawaret.dev" />
+        <meta name="description" content="Pawaret Muengkaew personal portfolio website made with 💖 using Next.js and Taiwlind CSS" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="h-full w-full">

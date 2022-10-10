@@ -1,3 +1,4 @@
+import Webring from "@components/icons/Webring"
 import {
   faDownload,
   faQuoteLeft,
@@ -117,6 +118,13 @@ export default function Hero() {
           </div>
         </div> */}
       </div>
+      <a
+        href="https://webring.wonderful.software#pawaret.dev"
+        title="วงแหวนเว็บ"
+        className="absolute top-10 right-10  hover:animate-spin hover:text-primary"
+      >
+        <Webring />
+      </a>
     </div>
   )
 }
