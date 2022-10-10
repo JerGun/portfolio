@@ -1,18 +1,15 @@
 import {
   faAward,
   faGraduationCap,
-  faImage,
   faTrophy,
 } from "@fortawesome/free-solid-svg-icons"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import React, { useState } from "react"
-import { Swiper, SwiperSlide } from "swiper/react"
-import { Autoplay, Keyboard } from "swiper"
 import Lightbox from "react-awesome-lightbox"
 
 import "swiper/css"
 import "swiper/css/scrollbar"
 import "react-awesome-lightbox/build/style.css"
+import AwardSwiper from "@components/AwardSwiper"
 
 const awards = [
   {
@@ -84,63 +81,26 @@ export default function Awards() {
   return (
     <div className="relative h-full w-full flex flex-col items-center py-20 space-y-16">
       <p className="text-4xl font-bold capitalize">Awards</p>
-      <div className="h-full w-9/12 flex justify-center items-center">
-        <Swiper
-          slidesPerView={3}
-          // initialSlide={1}
-          // grabCursor={true}
-          centeredSlides={true}
-          spaceBetween={100}
-          speed={1200}
-          // keyboard={{
-          //   enabled: true,
-          // }}
-          autoplay={{
-            delay: 4000,
-            disableOnInteraction: false,
-          }}
-          modules={[Autoplay, Keyboard]}
-          className="h-full"
-        >
-          {awards.map((award, i) => (
-            <SwiperSlide key={i}>
-              <div className="relative h-[400px] w-full flex items-end">
-                <div className="absolute h-12 w-12 top-0 left-1/2 transform -translate-x-1/2 flex items-center justify-center rounded-full shadow-md bg-primary">
-                  <FontAwesomeIcon
-                    icon={award.icon}
-                    className="text-[#333333]"
-                    size="lg"
-                  />
-                </div>
-                <div className="h-[375px] w-full p-5 pt-10 space-y-5 text-center rounded-xl bg-customGrayHeavy">
-                  <div className="h-[50%] flex flex-col items-center space-y-3">
-                    <p className="text-xl font-bold">{award.name}</p>
-                    <p>{award.organization}</p>
-                    <p className="text-primary">{award.date}</p>
-                    {award.images && (
-                      <div className="w-full flex justify-center">
-                        <button
-                          onClick={() => {
-                            setImageIndex(i)
-                          }}
-                          className=""
-                        >
-                          <FontAwesomeIcon
-                            icon={faImage}
-                            className=""
-                            size="lg"
-                          />
-                        </button>
-                      </div>
-                    )}
-                  </div>
-                  <div className="h-0.5 w-full bg-customGrayLight opacity-50"></div>
-                  <p>{award.description}</p>
-                </div>
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+      <div className="h-full w-9/12 flex justify-center items-center md:hidden">
+        <AwardSwiper
+          slidePerView={1}
+          awards={awards}
+          setImageIndex={setImageIndex}
+        />
+      </div>
+      <div className="h-full w-9/12 justify-center items-center hidden md:flex">
+        <AwardSwiper
+          slidePerView={2}
+          awards={awards}
+          setImageIndex={setImageIndex}
+        />
+      </div>
+      <div className="h-full w-9/12 justify-center items-center hidden lg:flex">
+        <AwardSwiper
+          slidePerView={3}
+          awards={awards}
+          setImageIndex={setImageIndex}
+        />
       </div>
       <div className="absolute">
         {awards.map((award, i) =>
