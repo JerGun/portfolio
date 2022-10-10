@@ -16,7 +16,7 @@ export default function Footer() {
       </a>
       .<p>View source code on</p>
       <a
-        href="https://github.com/JerGun/"
+        href="https://github.com/JerGun/portfolio"
         target="_blank"
         rel="noreferrer"
         className="text-white hover:underline"

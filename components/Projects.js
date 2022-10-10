@@ -30,29 +30,34 @@ export default function Projects({ title, projects, active }) {
       <div className="h-full w-full space-y-10 md:space-y-0 md:grid md:grid-cols-2 lg:grid-cols-3 gap-10">
         {projects.map((project, i) => (
           <div
-            className="h-full rounded-xl flex flex-col justify-between bg-customGrayHeavy transition duration-500 ease-in-out hover:scale-105"
+            className="h-full rounded-xl flex flex-col justify-between border border-customGrayHeavy bg-customGrayHeavy transition duration-500 ease-in-out hover:scale-105"
             key={i}
           >
-            <div className="relative h-[200px] w-full rounded-t-xl lg:h-[300px]">
-              <img
-                src={project.img}
-                alt={project.name}
-                className={`absolute h-full w-full z-10 rounded-t-xl ${
-                  project.style ? project.style : "object-cover object-center"
-                }`}
-              />
-              {project.mobile && <div className="absolute h-full w-full z-0 top-0 py-12">
+            <div className="flex flex-col">
+              <div className="relative h-[200px] w-full rounded-t-xl lg:h-[300px]">
                 <img
                   src={project.img}
                   alt={project.name}
-                  className="h-full w-full rounded-t-xl object-cover blur scale-125"
+                  className={`absolute h-full w-full z-10 rounded-t-xl ${
+                    project.style ? project.style : "object-cover object-center"
+                  }`}
                 />
-              </div>}
-            </div>
-            <div className="h-fit p-5 space-y-3">
-              <div className="flex items-center justify-between space-x-3">
-                <p className="text-lg font-bold text-primary">{project.name}</p>
-                {/* <span class="relative flex h-3 w-3">
+                {project.mobile && (
+                  <div className="absolute h-full w-full z-0 top-0 py-12">
+                    <img
+                      src={project.img}
+                      alt={project.name}
+                      className="h-full w-full rounded-t-xl object-cover blur scale-125"
+                    />
+                  </div>
+                )}
+              </div>
+              <div className="h-fit p-5 space-y-3">
+                <div className="flex items-center justify-between space-x-3">
+                  <p className="text-lg font-bold text-primary">
+                    {project.name}
+                  </p>
+                  {/* <span class="relative flex h-3 w-3">
                   <span
                     class={`${
                       project.active ? "bg-green-400" : "bg-red-400"
@@ -64,20 +69,21 @@ export default function Projects({ title, projects, active }) {
                     } relative inline-flex rounded-full h-3 w-3`}
                   ></span>
                 </span> */}
-                <p className="capitalize text-sm text-customGrayLight">
-                  {project.date}
-                </p>
-              </div>
-              <p className="text-sm md:text-base">{project.description}</p>
-              <div className="w-full flex flex-col items-center space-y-3">
-                <p className="text-primary">Technologies</p>
-                <div className="w-full flex flex-wrap">
-                  {project.tech.map((tech, i) => (
-                    <div className="flex text-sm md:text-base" key={i}>
-                      <p className={`${i % 2 != 0 && "text-text"}`}>{tech}</p>
-                      <span className="w-5"></span>
-                    </div>
-                  ))}
+                  <p className="capitalize text-sm text-customGrayLight">
+                    {project.date}
+                  </p>
+                </div>
+                <p className="text-sm md:text-base">{project.description}</p>
+                <div className="w-full flex flex-col items-center space-y-3">
+                  <p className="text-primary">Technologies</p>
+                  <div className="w-full flex flex-wrap">
+                    {project.tech.map((tech, i) => (
+                      <div className="flex text-sm md:text-base" key={i}>
+                        <p className={`${i % 2 != 0 && "text-text"}`}>{tech}</p>
+                        <span className="w-5"></span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
@@ -95,7 +101,13 @@ export default function Projects({ title, projects, active }) {
                     } relative inline-flex rounded-full h-3 w-3`}
                   ></span>
                 </span> */}
-                <p className="capitalize text-sm text-customGrayLight">
+                <p
+                  className={`${
+                    project.status == "active"
+                      ? "text-green-400"
+                      : "text-customGrayLight"
+                  } capitalize text-sm `}
+                >
                   {project.status}
                 </p>
               </div>
@@ -114,6 +126,7 @@ export default function Projects({ title, projects, active }) {
                 {project.live && (
                   <a
                     href={project.live}
+                    target="_blank"
                     className="p-3 transition duration-300 ease-in-out hover:scale-125 hover:text-primary"
                   >
                     <FontAwesomeIcon

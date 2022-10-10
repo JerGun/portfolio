@@ -1,14 +1,18 @@
-import {
-  faArrowUpRightFromSquare,
-  faCode,
-  faCodeBranch,
-} from "@fortawesome/free-solid-svg-icons"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import axios from "axios"
-import { useEffect, useState } from "react"
 import Projects from "../Projects"
 
 const projects = [
+  {
+    name: "Portfolio",
+    description: "Pawaret Muengkaew personal portfolio website made with 💖",
+    img: "/images/portfolio.jpeg",
+    tech: ["Next.js", "Tailwind CSS", "Swiper", "EmailJS", "Discord Webhook"],
+    sourceCode: "https://github.com/JerGun/portfolio",
+    live: "https://pawaret.dev/",
+    date: "09/2022",
+    active: false,
+    status: "active",
+    style: "object-left object-cover",
+  },
   {
     name: "Ticketplace",
     description:
@@ -54,7 +58,7 @@ const projects = [
     active: false,
     status: "archive",
     style: "object-contain",
-    mobile: true
+    mobile: true,
   },
   {
     name: "Covid19",
@@ -68,7 +72,7 @@ const projects = [
     active: false,
     status: "archive",
     style: "object-contain",
-    mobile: true
+    mobile: true,
   },
   {
     name: "UDIX",
@@ -94,7 +98,7 @@ const projects = [
     active: false,
     status: "archive",
     style: "object-contain",
-    mobile: true
+    mobile: true,
   },
 ]
 
