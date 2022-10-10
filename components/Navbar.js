@@ -57,7 +57,7 @@ export default function Navbar({
 
   return (
     <div
-      className={`sticky top-0 z-50 h-16 w-full shadow-lg bg-white`}
+      className="sticky top-0 z-50 h-16 w-full shadow-lg bg-white hidden lg:block"
       style={{ opacity: `${opacity}%` }}
     >
       <div className="h-full w-full flex justify-between pl-10 bg-background ">
