@@ -24,21 +24,21 @@ const awards = [
   {
     name: "Outstanding Academic Performance",
     description:
-      "Award for students who have achieved academic excellence by maintaining a 10 cumulative A grades",
+      "Award for students who have achieved academic excellence by maintaining a 10 cumulative A grades in a single year.",
     organization: "University of Phayao",
     date: "2019, 2021",
     type: "",
     icon: faAward,
-    images: [
-      {
-        url: "https://firebasestorage.googleapis.com/v0/b/pawaret-portfolio.appspot.com/o/Hackathon.png?alt=media&token=f41f3ea6-57ae-4cbd-a5f5-e112513ca3ca",
-        title: "Outstanding Academic Performance Year 2019",
-      },
-      {
-        url: "https://firebasestorage.googleapis.com/v0/b/pawaret-portfolio.appspot.com/o/Hackathon.png?alt=media&token=f41f3ea6-57ae-4cbd-a5f5-e112513ca3ca",
-        title: "Outstanding Academic Performance Year 2021",
-      },
-    ],
+    // images: [
+    //   {
+    //     url: "https://firebasestorage.googleapis.com/v0/b/pawaret-portfolio.appspot.com/o/Hackathon.png?alt=media&token=f41f3ea6-57ae-4cbd-a5f5-e112513ca3ca",
+    //     title: "Outstanding Academic Performance Year 2019",
+    //   },
+    //   {
+    //     url: "https://firebasestorage.googleapis.com/v0/b/pawaret-portfolio.appspot.com/o/Hackathon.png?alt=media&token=f41f3ea6-57ae-4cbd-a5f5-e112513ca3ca",
+    //     title: "Outstanding Academic Performance Year 2021",
+    //   },
+    // ],
   },
   {
     name: "Good Academic Performance",
@@ -48,16 +48,16 @@ const awards = [
     date: "2020 - 2021",
     type: "Academic Achievement Awards",
     icon: faAward,
-    images: [
-      {
-        url: "https://firebasestorage.googleapis.com/v0/b/pawaret-portfolio.appspot.com/o/Hackathon.png?alt=media&token=f41f3ea6-57ae-4cbd-a5f5-e112513ca3ca",
-        title: "Good Academic Performance Year 2020",
-      },
-      {
-        url: "https://firebasestorage.googleapis.com/v0/b/pawaret-portfolio.appspot.com/o/Hackathon.png?alt=media&token=f41f3ea6-57ae-4cbd-a5f5-e112513ca3ca",
-        title: "Good Academic Performance Year 2021",
-      },
-    ],
+    // images: [
+    //   {
+    //     url: "https://firebasestorage.googleapis.com/v0/b/pawaret-portfolio.appspot.com/o/Hackathon.png?alt=media&token=f41f3ea6-57ae-4cbd-a5f5-e112513ca3ca",
+    //     title: "Good Academic Performance Year 2020",
+    //   },
+    //   {
+    //     url: "https://firebasestorage.googleapis.com/v0/b/pawaret-portfolio.appspot.com/o/Hackathon.png?alt=media&token=f41f3ea6-57ae-4cbd-a5f5-e112513ca3ca",
+    //     title: "Good Academic Performance Year 2021",
+    //   },
+    // ],
   },
   {
     name: "Hackathon Boot Camp",

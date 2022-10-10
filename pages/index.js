@@ -37,7 +37,7 @@ export default function Home() {
   }
 
   return (
-    <div className="h-full w-full bg-background bg-opacity-90">
+    <div className="h-full w-full text-white bg-background bg-opacity-90">
       <Head>
         <title>Pawaret Muengkaew | Portfolio</title>
         <meta name="description" content="Pawaret Muengkaew personal portfolio website made with 💖 using Next.js and Taiwlind CSS" />
