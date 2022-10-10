@@ -97,7 +97,7 @@ export default function Experiences() {
                     <p>{experience.archievement}</p>
                   </div>
                 )}
-                <p className="text-sm pt-3 md:text-base text-text">
+                <p className="pt-3 text-text">
                   {experience.description}
                 </p>
               </div>

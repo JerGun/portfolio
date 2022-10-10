@@ -9,10 +9,10 @@ export default function Projects({ title, projects, active }) {
     <div className="w-full space-y-10">
       <div className="space-y-5">
         <div className="flex space-x-5 items-center">
-          <p className="text-3xl font-bold capitalize">{title}</p>
+          <p className="text-xl font-bold capitalize md:text-3xl">{title}</p>
           <span className="h-0.5 w-10 bg-white"></span>
         </div>
-        <div className="flex space-x-1">
+        <div className="flex flex-wrap space-x-1">
           <p>
             All small gallery of recent projects chosen by me. Interested to see
             some more? Visit
@@ -27,13 +27,13 @@ export default function Projects({ title, projects, active }) {
           <p>page.</p>
         </div>
       </div>
-      <div className="h-full w-full grid grid-cols-3 gap-10">
+      <div className="h-full w-full space-y-10 md:space-y-0 md:grid md:grid-cols-2 lg:grid-cols-3 gap-10">
         {projects.map((project, i) => (
           <div
             className="h-full rounded-xl flex flex-col justify-between bg-customGrayHeavy transition duration-500 ease-in-out hover:scale-105"
             key={i}
           >
-            <div className="relative h-[300px] w-full rounded-t-xl">
+            <div className="relative h-[200px] w-full rounded-t-xl lg:h-[300px]">
               <img
                 src={project.img}
                 alt={project.name}
@@ -68,12 +68,12 @@ export default function Projects({ title, projects, active }) {
                   {project.date}
                 </p>
               </div>
-              <p>{project.description}</p>
+              <p className="text-sm md:text-base">{project.description}</p>
               <div className="w-full flex flex-col items-center space-y-3">
                 <p className="text-primary">Technologies</p>
                 <div className="w-full flex flex-wrap">
                   {project.tech.map((tech, i) => (
-                    <div className="flex" key={i}>
+                    <div className="flex text-sm md:text-base" key={i}>
                       <p className={`${i % 2 != 0 && "text-text"}`}>{tech}</p>
                       <span className="w-5"></span>
                     </div>

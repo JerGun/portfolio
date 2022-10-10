@@ -10,7 +10,7 @@ export default function CertificateSwiper({
     <Swiper
       slidesPerView={slidePerView}
       centeredSlides={true}
-      spaceBetween={0}
+      spaceBetween={50}
       speed={1200}
       autoplay={{
         delay: 4000,

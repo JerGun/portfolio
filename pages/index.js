@@ -2,7 +2,7 @@ import Navbar from "@components/Navbar"
 import Head from "next/head"
 import { useEffect, useRef, useState } from "react"
 import Footer from "@components/Footer"
-import Hero from "@components/Hero"
+import Hero from "@components/home/Hero"
 import Works from "@components/home/Works"
 import Skills from "@components/home/Skills"
 import Experiences from "@components/home/Experiences"
@@ -10,7 +10,6 @@ import Awards from "@components/home/Awards"
 import Education from "@components/home/Education"
 import Contact from "@components/home/Contact"
 import Certificates from "@components/home/Certificates"
-// import SmoothScroll from "@components/SmoothScroll"
 
 export default function Home() {
   const heroRef = useRef(null)
@@ -45,9 +44,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="h-full w-full">
-        <div ref={heroRef}>
+        <section ref={heroRef}>
           <Hero />
-        </div>
+        </section>
         <div className="relative">
           <Navbar
             opacity={scrollY}
@@ -60,27 +59,27 @@ export default function Home() {
             educationRef={educationRef}
             contactRef={contactRef}
           />
-          <div ref={skillRef} className="h-full w-full">
+          <section ref={skillRef} className="h-full w-full">
             <Skills />
-          </div>
-          <div ref={workRef} className="h-full w-full">
+          </section>
+          <section ref={workRef} className="h-full w-full">
             <Works />
-          </div>
-          <div ref={experienceRef} className="h-full w-full">
+          </section>
+          <section ref={experienceRef} className="h-full w-full">
             <Experiences />
-          </div>
-          <div ref={awardRef} className="h-full w-full">
+          </section>
+          <section ref={awardRef} className="h-full w-full">
             <Awards />
-          </div>
-          <div ref={certificateRef} className="h-full w-full">
+          </section>
+          <section ref={certificateRef} className="h-full w-full">
             <Certificates />
-          </div>
-          <div ref={educationRef} className="h-full w-full">
+          </section>
+          <section ref={educationRef} className="h-full w-full">
             <Education />
-          </div>
-          <div ref={contactRef} className="h-full w-full">
+          </section>
+          <section ref={contactRef} className="h-full w-full">
             <Contact />
-          </div>
+          </section>
           <Footer />
         </div>
       </div>

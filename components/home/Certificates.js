@@ -41,7 +41,7 @@ export default function Certificates() {
   return (
     <div className="relative h-full w-full flex flex-col items-center py-20 space-y-16">
       <p className="text-4xl font-bold capitalize">Certificates</p>
-      {/* <div className="h-full w-9/12 grid grid-cols-1 gap-y-10 items-center md:grid-cols-2 lg:grid-cols-3">
+      <div className="h-full w-9/12 grid-cols-1 gap-y-10 items-center hidden lg:grid md:grid-cols-2 lg:grid-cols-3">
         {certificates.map((certificate, i) => (
           <div className="h-full w-full flex justify-center" key={i}>
             <button
@@ -59,8 +59,8 @@ export default function Certificates() {
             </button>
           </div>
         ))}
-      </div> */}
-      <div className="h-full w-9/12">
+      </div>
+      <div className="h-full w-9/12 lg:hidden">
         <CertificateSwiper
           slidePerView={1}
           certificates={certificates}

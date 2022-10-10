@@ -106,12 +106,12 @@ export default function Contact() {
   return (
     <div className="h-full w-full flex flex-col items-center py-20 space-y-10">
       <p className="text-4xl font-bold capitalize">Contact</p>
-      <div className="w-full flex flex-col items-center px-32 space-y-10">
+      <div className="w-2/3 flex flex-col items-center space-y-10">
         <div className="space-y-5">
           <div className="flex justify-center">
             <img src="../images/logo.png" alt="" className="h-24 w-24" />
           </div>
-          <div className="flex items-center space-x-5">
+          <div className="flex items-center space-x-5 text-sm md:text-base">
             <a
               href="mailto:pawaret.muengkaew@outlook.com"
               className="h-10 w-10 flex items-center justify-center border rounded-full transition-all duration-500 ease-in-out hover:bg-primary hover:border-primary hover:text-[#333333] hover:scale-110"
@@ -126,7 +126,7 @@ export default function Contact() {
           <p>Please be sure to fill in your name and correct email address.</p>
         </div> */}
         <form
-          className="w-1/2 flex flex-col items-center space-y-10"
+          className="w-full flex flex-col items-center space-y-10 md:w-2/3 lg:w-1/2"
           onSubmit={sendHandler}
         >
           <div className="w-full space-y-5">
