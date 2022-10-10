@@ -1,3 +1,4 @@
+import CertificateSwiper from "@components/CertificateSwiper"
 import React, { useState } from "react"
 import Lightbox from "react-awesome-lightbox"
 
@@ -40,7 +41,7 @@ export default function Certificates() {
   return (
     <div className="relative h-full w-full flex flex-col items-center py-20 space-y-16">
       <p className="text-4xl font-bold capitalize">Certificates</p>
-      <div className="h-full w-9/12 grid grid-cols-3 gap-y-10 items-center">
+      {/* <div className="h-full w-9/12 grid grid-cols-1 gap-y-10 items-center md:grid-cols-2 lg:grid-cols-3">
         {certificates.map((certificate, i) => (
           <div className="h-full w-full flex justify-center" key={i}>
             <button
@@ -58,6 +59,13 @@ export default function Certificates() {
             </button>
           </div>
         ))}
+      </div> */}
+      <div className="h-full w-9/12">
+        <CertificateSwiper
+          slidePerView={1}
+          certificates={certificates}
+          setImageIndex={setImageIndex}
+        />
       </div>
       {imageIndex != null && (
         <div className="absolute">

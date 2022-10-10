@@ -88,7 +88,7 @@ export default function Awards() {
           setImageIndex={setImageIndex}
         />
       </div>
-      <div className="h-full w-9/12 justify-center items-center hidden md:flex">
+      <div className="h-full w-9/12 justify-center items-center hidden md:flex lg:hidden">
         <AwardSwiper
           slidePerView={2}
           awards={awards}
