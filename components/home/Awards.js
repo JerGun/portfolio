@@ -3,13 +3,15 @@ import {
   faGraduationCap,
   faTrophy,
 } from "@fortawesome/free-solid-svg-icons"
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import Lightbox from "react-awesome-lightbox"
+import AwardSwiper from "@components/AwardSwiper"
+import AOS from "aos"
 
+import "aos/dist/aos.css"
 import "swiper/css"
 import "swiper/css/scrollbar"
 import "react-awesome-lightbox/build/style.css"
-import AwardSwiper from "@components/AwardSwiper"
 
 const awards = [
   {
@@ -75,8 +77,18 @@ const awards = [
   },
 ]
 
-export default function Awards() {
+export default function Awards({awardRef}) {
   const [imageIndex, setImageIndex] = useState(null)
+
+  useEffect(() => {
+    AOS.init({
+      disable: function () {
+        var maxWidth = 768
+        return window.innerWidth < maxWidth
+      },
+      duration: 800,
+    })
+  }, [])
 
   return (
     <div className="relative h-full w-full flex flex-col items-center py-20 space-y-16">
@@ -86,6 +98,7 @@ export default function Awards() {
           slidePerView={1}
           awards={awards}
           setImageIndex={setImageIndex}
+          awardRef={awardRef}
         />
       </div>
       <div className="h-full w-9/12 justify-center items-center hidden md:flex lg:hidden">
@@ -93,13 +106,15 @@ export default function Awards() {
           slidePerView={2}
           awards={awards}
           setImageIndex={setImageIndex}
+          awardRef={awardRef}
         />
       </div>
-      <div className="h-full w-9/12 justify-center items-center hidden lg:flex">
+      <div className="h-full w-9/12 justify-center items-center hidden lg:flex" data-aos="zoom-in-up">
         <AwardSwiper
           slidePerView={3}
           awards={awards}
           setImageIndex={setImageIndex}
+          awardRef={awardRef}
         />
       </div>
       <div className="absolute">

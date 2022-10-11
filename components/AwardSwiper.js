@@ -1,11 +1,38 @@
 import { faImage } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { Autoplay, Keyboard } from "swiper"
+import useOnScreen from "@lib/useOnScreen"
+import { useEffect, useRef } from "react"
+import SwiperCore, { Autoplay, Keyboard } from "swiper"
 import { Swiper, SwiperSlide } from "swiper/react"
 
-export default function AwardSwiper({ slidePerView, awards, setImageIndex }) {
+export default function AwardSwiper({
+  slidePerView,
+  awards,
+  setImageIndex,
+  awardRef,
+}) {
+  const swiperRef = useRef(null)
+
+  const isAwardVisible = useOnScreen(awardRef)
+
+  const onInit = (SwiperCore) => {
+    swiperRef.current = SwiperCore
+  }
+
+  useEffect(() => {
+    handleSwiperAutoPlay()
+  }, [isAwardVisible])
+
+  const handleSwiperAutoPlay = () => {
+    if (swiperRef.current) {
+      if (isAwardVisible) swiperRef.current.autoplay.start()
+      else swiperRef.current.autoplay.stop()
+    }
+  }
+
   return (
     <Swiper
+      onInit={onInit}
       slidesPerView={slidePerView}
       // initialSlide={1}
       // grabCursor={true}

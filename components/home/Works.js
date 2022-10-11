@@ -49,7 +49,7 @@ const projects = [
   {
     name: "Assign Me",
     description:
-      "An application for assignments to students. You can create groups and separate channels independently. Afther that you can create assignments in individual groups and channels It also generates a summary of all scores at the end of the course.",
+      "An application for assignments to students. You can create groups and separate channels independently. After that you can create assignments in individual groups and channels It also generates a summary of all scores at the end of the course.",
     img: "/images/assignme.png",
     tech: ["Flutter", "Dart", "Firebase", "Firestore"],
     sourceCode: "https://github.com/JerGun/AssignMe",

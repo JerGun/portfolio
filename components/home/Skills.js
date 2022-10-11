@@ -30,6 +30,10 @@ import GitHub from "@components/icons/GitHub"
 import GitLab from "@components/icons/GitLab"
 import GitHubPages from "@components/icons/GitHubPages"
 import Headless from "@components/icons/Headless"
+import { useEffect } from "react"
+import AOS from "aos"
+
+import "aos/dist/aos.css"
 
 const backendSkills = [
   {
@@ -172,6 +176,16 @@ const frontendSkills = [
 ]
 
 export default function Skills() {
+  useEffect(() => {
+    AOS.init({
+      disable: function () {
+        var maxWidth = 768
+        return window.innerWidth < maxWidth
+      },
+      duration: 800,
+    })
+  }, [])
+
   return (
     <div className="h-full w-full flex flex-col items-center py-20 space-y-16">
       <p className="text-4xl font-bold">Skills</p>
@@ -193,7 +207,7 @@ export default function Skills() {
         </div>
         <span className="h-[0.5px] w-full bg-white bg-opacity-30 hidden md:block"></span>
         <div className="w-full md:grid grid-cols-7 justify-center space-y-10 md:space-y-0 md:divide-x divide-opacity-30 divide-white">
-          <div className="h-full w-full flex flex-col items-center col-span-2 space-y-5">
+          <div className="h-full w-full flex flex-col items-center col-span-2 space-y-5" data-aos="zoom-in-right">
             <div className="h-fit w-fit flex flex-col items-center space-y-5">
               <FontAwesomeIcon
                 icon={faCodeBranch}
@@ -207,7 +221,7 @@ export default function Skills() {
               <SkillItem icon={<GitLab />} name="GitLab" />
             </div>
           </div>
-          <div className="h-full w-full flex flex-col items-center col-span-3 space-y-5">
+          <div className="h-full w-full flex flex-col items-center col-span-3 space-y-5"  data-aos="zoom-in-up">
             <div className="h-fit w-fit flex flex-col items-center space-y-5">
               <FontAwesomeIcon
                 icon={faCloud}
@@ -222,7 +236,7 @@ export default function Skills() {
               <SkillItem icon={<Vercel />} name="Vercel" />
             </div>
           </div>
-          <div className="h-full w-full flex flex-col items-center col-span-2 space-y-5">
+          <div className="h-full w-full flex flex-col items-center col-span-2 space-y-5"  data-aos="zoom-in-left">
             <div className="h-fit w-fit flex flex-col items-center space-y-5">
               <FontAwesomeIcon
                 icon={faCodeBranch}

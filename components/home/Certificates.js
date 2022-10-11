@@ -1,7 +1,9 @@
 import CertificateSwiper from "@components/CertificateSwiper"
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import Lightbox from "react-awesome-lightbox"
+import AOS from "aos"
 
+import "aos/dist/aos.css"
 import "react-awesome-lightbox/build/style.css"
 
 const certificates = [
@@ -38,12 +40,22 @@ const certificates = [
 export default function Certificates() {
   const [imageIndex, setImageIndex] = useState(null)
 
+  useEffect(() => {
+    AOS.init({
+      disable: function () {
+        var maxWidth = 768
+        return window.innerWidth < maxWidth
+      },
+      duration: 800,
+    })
+  }, [])
+
   return (
     <div className="relative h-full w-full flex flex-col items-center py-20 space-y-16">
       <p className="text-4xl font-bold capitalize">Certificates</p>
       <div className="h-full w-9/12 grid-cols-1 gap-y-10 items-center hidden lg:grid md:grid-cols-2 lg:grid-cols-3">
         {certificates.map((certificate, i) => (
-          <div className="h-full w-full flex justify-center" key={i}>
+          <div className="h-full w-full flex justify-center" key={i} data-aos="zoom-in-up">
             <button
               className="w-2/3 flex flex-col items-center space-y-3"
               onClick={() => {

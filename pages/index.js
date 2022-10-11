@@ -11,6 +11,7 @@ import Education from "@components/home/Education"
 import Contact from "@components/home/Contact"
 import Certificates from "@components/home/Certificates"
 
+
 export default function Home() {
   const heroRef = useRef(null)
   const skillRef = useRef(null)
@@ -40,7 +41,10 @@ export default function Home() {
     <div className="h-full w-full text-white bg-background bg-opacity-90">
       <Head>
         <title>Pawaret Muengkaew | Portfolio</title>
-        <meta name="description" content="Pawaret Muengkaew personal portfolio website made with 💖 using Next.js and Taiwlind CSS" />
+        <meta
+          name="description"
+          content="Pawaret Muengkaew personal portfolio website made with 💖 using Next.js and Taiwlind CSS"
+        />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="h-full w-full">
@@ -69,7 +73,7 @@ export default function Home() {
             <Experiences />
           </section>
           <section ref={awardRef} className="h-full w-full">
-            <Awards />
+            <Awards awardRef={awardRef}/>
           </section>
           <section ref={certificateRef} className="h-full w-full">
             <Certificates />
