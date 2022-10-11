@@ -61,3 +61,20 @@ a {
   overflow: hidden;
   will-change: transform;
 }
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #424242;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #999999;
+  border-radius: 25px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  
+}
