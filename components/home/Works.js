@@ -5,7 +5,7 @@ const projects = [
     name: "Portfolio",
     description: "Pawaret Muengkaew personal portfolio website made with 💖",
     img: "/images/portfolio.jpeg",
-    tech: ["Next.js", "Tailwind CSS", "Swiper", "EmailJS", "Discord Webhook"],
+    tech: ["Next.js", "Tailwind CSS", "Swiper", "AOS", "EmailJS", "Discord Webhook"],
     sourceCode: "https://github.com/JerGun/portfolio",
     live: "https://pawaret.dev/",
     date: "09/2022",
