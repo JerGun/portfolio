@@ -1,10 +1,10 @@
 {
-    "compilerOptions": {
-      "baseUrl": ".",
-      "module": "commonjs",
-      "paths": {
-        "@components/*": ["components/*"],
-        "@lib/*": ["lib/*"],
-      }
+  "compilerOptions": {
+    "baseUrl": ".",
+    "module": "commonjs",
+    "paths": {
+      "@components/*": ["components/*"],
+      "@lib/*": ["lib/*"],
     }
   }
+}
