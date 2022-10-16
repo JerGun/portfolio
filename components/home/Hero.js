@@ -23,7 +23,7 @@ const highlights = [
 export default function Hero() {
   return (
     <div className="h-full w-full flex flex-col md:flex-row-reverse md:h-screen transition-all duration-500 ease-in-out md:p-10">
-      <div className="relative h-screen w-full flex flex-col items-center justify-center space-y-10 md:h-full">
+      <div className="relative h-screen w-full flex flex-col items-center justify-center space-y-10 md:h-full" data-aos="zoom-in-left">
         <div className="relative h-[40%] w-2/3 rounded-xl text-base transition duration-500 ease-in-out hover:scale-105 md:h-[55%">
           <TiltPhase
             options={{
@@ -55,14 +55,14 @@ export default function Hero() {
           </div>
         </div>
       </div>
-      <div className="h-full w-full flex flex-col items-center justify-center space-y-14 px-10 pb-10 md:pl-20">
+      <div className="h-full w-full flex flex-col items-center justify-center space-y-14 px-10 pb-10 md:pl-20" data-aos="zoom-in-right">
         <div className="space-y-10">
           <div className="space-y-5">
             <div className="animate-bounce-five flex mb-5 text-3xl md:text-5xl">
               <p className="font-bold">Hi there</p>
               <p className="font-bold text-primary ">!</p>
             </div>
-            <div className="flex md:space-x-5">
+            <div className="flex md:space-x-5" data-aos="fade-up">
               <span className="h-0.5 w-10 mt-3 bg-white hidden md:block"></span>
               <p className="w-full">
                 I'm a web developer from Thailand. I describe myself as a
@@ -70,7 +70,7 @@ export default function Hero() {
                 new technologies.
               </p>
             </div>
-            <div className="flex md:space-x-5">
+            <div className="flex md:space-x-5" data-aos="fade-up">
               <span className="w-10 hidden md:block"></span>
               <p className="w-full">
                 In my spare time I often listen to music, play games, watch
@@ -78,7 +78,7 @@ export default function Hero() {
               </p>
             </div>
           </div>
-          <div className="w-full md:text-lg flex flex-col items-center">
+          <div className="w-full md:text-lg flex flex-col items-center" data-aos="fade-up">
             <div className="flex space-x-2 flex-wrap">
               <FontAwesomeIcon icon={faQuoteLeft} />
               <p>Debugging becomes significantly easier</p>

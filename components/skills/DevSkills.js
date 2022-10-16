@@ -32,7 +32,7 @@ export default function DevSkills({ title, skills }) {
       </div>
       <div className="w-4/5 flex flex-col items-center space-y-10">
         {skills.map((skill, i) => (
-          <div className="w-full flex flex-col items-center space-y-10" key={i}>
+          <div className="w-full flex flex-col items-center space-y-10" key={i} data-aos="zoom-in-up">
             <p className="text-primary capitalize">{skill.header}</p>
             <div
               className={`w-full grid grid-cols-2 grid-rows-${
