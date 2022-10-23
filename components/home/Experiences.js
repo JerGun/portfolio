@@ -16,6 +16,10 @@ const experiences = [
     icon: faUserTie,
     archievement: "Employee",
     description: "",
+    technologies: [
+      "Kotlin",
+      "Spring Boot"
+    ],
     company: "OneDee Solution Co., Ltd.,",
     date: "Oct 2022 - Present",
   },
@@ -24,6 +28,11 @@ const experiences = [
     icon: faUserGraduate,
     archievement: "Internship",
     description: "",
+    technologies: [
+      "Kotlin",
+      "Spring Boot",
+      "Nest.js"
+    ],
     company: "OneDee Solution Co., Ltd.,",
     date: "Apr 2022 - Sep 2022",
   },
@@ -32,6 +41,11 @@ const experiences = [
     icon: faUserGraduate,
     archievement: "Internship",
     description: "",
+    technologies: [
+      "Kotlin",
+      "Spring Boot",
+      "Nest.js"
+    ],
     company: "OneDee Solution Co., Ltd.,",
     date: "Apr 2021 - May 2021",
   },

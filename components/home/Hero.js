@@ -5,11 +5,13 @@ import {
   faQuoteRight,
 } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import axios from "axios"
-import { useEffect, useState } from "react"
 import { TypeAnimation } from "react-type-animation"
 import SocialButton from "../hero/SocialButton"
-import TiltPhase from "../TiltPhase"
+import Facebook from "@components/icons/Facebook"
+import GitHub from "@components/icons/GitHub"
+import GitLab from "@components/icons/GitLab"
+import TiltPhaseSix from "@components/TiltPhase"
+import Linkedin from "@components/icons/Linkedin"
 
 const highlights = [
   "Software Engineer",
@@ -20,12 +22,34 @@ const highlights = [
   3000,
 ]
 
+const socials = [
+  {
+    url: "https://www.facebook.com/GongPawaret/",
+    icon: <Facebook />,
+  },
+  {
+    url: "https://www.linkedin.com/in/pawaret/",
+    icon: <Linkedin />,
+  },
+  {
+    url: "https://github.com/JerGun/",
+    icon: <GitHub />,
+  },
+  {
+    url: "https://gitlab.com/JerGun/",
+    icon: <GitLab />,
+  },
+]
+
 export default function Hero() {
   return (
     <div className="h-full w-full flex flex-col md:flex-row-reverse md:h-screen transition-all duration-500 ease-in-out md:p-10">
-      <div className="relative h-screen w-full flex flex-col items-center justify-center space-y-10 md:h-full" data-aos="zoom-in-left">
+      <div
+        className="relative h-screen w-full flex flex-col items-center justify-center space-y-10 md:h-full"
+        data-aos="zoom-in-left"
+      >
         <div className="relative h-[40%] w-2/3 rounded-xl text-base transition duration-500 ease-in-out hover:scale-105 md:h-[55%">
-          <TiltPhase
+          <TiltPhaseSix
             options={{
               max: 10,
               perspective: 800,
@@ -37,7 +61,7 @@ export default function Hero() {
               alt=""
               className="h-full w-full object-contain"
             />
-          </TiltPhase>
+          </TiltPhaseSix>
         </div>
         <div className="flex flex-col items-center space-y-5">
           <p className="text-2xl font-bold">Pawaret Muengkaew</p>
@@ -55,7 +79,10 @@ export default function Hero() {
           </div>
         </div>
       </div>
-      <div className="h-full w-full flex flex-col items-center justify-center space-y-14 px-10 pb-10 md:pl-20" data-aos="zoom-in-right">
+      <div
+        className="h-full w-full flex flex-col items-center justify-center space-y-14 px-10 pb-10 md:pl-20"
+        data-aos="zoom-in-right"
+      >
         <div className="space-y-10">
           <div className="space-y-5">
             <div className="animate-bounce-five flex mb-5 text-3xl md:text-5xl">
@@ -78,7 +105,10 @@ export default function Hero() {
               </p>
             </div>
           </div>
-          <div className="w-full md:text-lg flex flex-col items-center" data-aos="fade-up">
+          <div
+            className="w-full md:text-lg flex flex-col items-center"
+            data-aos="fade-up"
+          >
             <div className="flex space-x-2 flex-wrap">
               <FontAwesomeIcon icon={faQuoteLeft} />
               <p>Debugging becomes significantly easier</p>
@@ -89,10 +119,10 @@ export default function Hero() {
             </div>
           </div>
         </div>
-        <div className="w-full flex justify-center space-x-16 md:space-x-20">
-          <SocialButton name={"facebook"} />
-          <SocialButton name={"github"} />
-          <SocialButton name={"gitlab"} />
+        <div className="w-full flex justify-center space-x-6 md:space-x-20">
+          {socials.map((social, i) => (
+            <SocialButton social={social} key={i} />
+          ))}
         </div>
         <a
           href="/resume.pdf"
