@@ -11,7 +11,6 @@ import Education from "@components/home/Education"
 import Contact from "@components/home/Contact"
 import Certificates from "@components/home/Certificates"
 
-
 export default function Home() {
   const heroRef = useRef(null)
   const skillRef = useRef(null)
@@ -23,6 +22,7 @@ export default function Home() {
   const contactRef = useRef(null)
 
   const [scrollY, setScrollY] = useState(0)
+  const [darkMode, setDarkMode] = useState(true)
 
   useEffect(() => {
     handleScroll()
@@ -38,7 +38,7 @@ export default function Home() {
   }
 
   return (
-    <div className="h-full w-full text-white bg-background bg-opacity-90">
+    <div className={`${darkMode && "dark"} h-full w-full `}>
       <Head>
         <title>Pawaret Muengkaew | Portfolio</title>
         <meta
@@ -47,9 +47,9 @@ export default function Home() {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="h-full w-full">
+      <div className="h-full w-full bg-white dark:bg-opacity-90 dark:bg-background text-black dark:text-white">
         <section ref={heroRef}>
-          <Hero />
+          <Hero darkMode={darkMode} setDarkMode={setDarkMode} />
         </section>
         <div className="relative">
           <Navbar
@@ -62,6 +62,8 @@ export default function Home() {
             certificateRef={certificateRef}
             educationRef={educationRef}
             contactRef={contactRef}
+            darkMode={darkMode}
+            setDarkMode={setDarkMode}
           />
           <section ref={skillRef} className="h-full w-full">
             <Skills />
@@ -73,7 +75,7 @@ export default function Home() {
             <Experiences />
           </section>
           <section ref={awardRef} className="h-full w-full">
-            <Awards awardRef={awardRef}/>
+            <Awards awardRef={awardRef} />
           </section>
           <section ref={certificateRef} className="h-full w-full">
             <Certificates />

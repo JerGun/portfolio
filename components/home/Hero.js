@@ -1,8 +1,10 @@
 import Webring from "@components/icons/Webring"
 import {
   faDownload,
+  faMoon,
   faQuoteLeft,
   faQuoteRight,
+  faSun,
 } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { TypeAnimation } from "react-type-animation"
@@ -12,6 +14,7 @@ import GitHub from "@components/icons/GitHub"
 import GitLab from "@components/icons/GitLab"
 import TiltPhaseSix from "@components/TiltPhase"
 import Linkedin from "@components/icons/Linkedin"
+import Bright from "@components/icons/Bright"
 
 const highlights = [
   "Software Engineer",
@@ -41,9 +44,9 @@ const socials = [
   },
 ]
 
-export default function Hero() {
+export default function Hero({ darkMode, setDarkMode }) {
   return (
-    <div className="h-full w-full flex flex-col md:flex-row-reverse md:h-screen transition-all duration-500 ease-in-out md:p-10">
+    <div className="h-full w-full flex flex-col md:flex-row-reverse md:h-screen transition-all duration-500 ease-in-out md:p-10 text-black dark:text-white">
       <div
         className="relative h-screen w-full flex flex-col items-center justify-center space-y-10 md:h-full"
         data-aos="zoom-in-left"
@@ -127,7 +130,7 @@ export default function Hero() {
         <a
           href="/resume.pdf"
           target={"_blank"}
-          className="h-12 p-5 space-x-3 flex items-center justify-center rounded-xl font-bold group transition ease-in-out duration-500 text-black bg-primary hover:scale-110"
+          className="h-12 p-5 space-x-3 flex items-center justify-center rounded-xl font-bold group transition ease-in-out duration-500 shadow-md text-black bg-primary hover:scale-110"
         >
           <p>Download Resume</p>
           <FontAwesomeIcon
@@ -148,13 +151,21 @@ export default function Hero() {
           </div>
         </div> */}
       </div>
-      <a
-        href="https://webring.wonderful.software#pawaret.dev"
-        title="วงแหวนเว็บ"
-        className="absolute top-10 right-10  hover:animate-spin hover:text-primary"
-      >
-        <Webring />
-      </a>
+      <div className="absolute top-10 w-full flex justify-between items-center px-10 flex-row-reverse md:right-0 md:w-fit md:flex-col md:space-y-5">
+        <a
+          href="https://webring.wonderful.software#pawaret.dev"
+          title="วงแหวนเว็บ"
+          className="transition duration-300 ease-in-out hover:animate-spin hover:text-primary"
+        >
+          <Webring />
+        </a>
+        <button
+          onClick={() => setDarkMode(!darkMode)}
+          className="transition duration-300 ease-in-out text-2xl hover:scale-125 hover:text-primary"
+        >
+          {darkMode ? <FontAwesomeIcon icon={faMoon} /> : <Bright />}
+        </button>
+      </div>
     </div>
   )
 }

@@ -9,11 +9,14 @@ import {
   faRocket,
   faAward,
   faCertificate,
+  faMoon,
+  faSun,
 } from "@fortawesome/free-solid-svg-icons"
 import { useState } from "react"
 import useOnScreen from "lib/useOnScreen"
 import Scrollbar from "smooth-scrollbar"
 import OptionButton from "./navbar/OptionButton"
+import Bright from "./icons/Bright"
 
 export default function Navbar({
   opacity,
@@ -25,6 +28,8 @@ export default function Navbar({
   certificateRef,
   educationRef,
   contactRef,
+  darkMode,
+  setDarkMode,
 }) {
   const isSkillsVisible = useOnScreen(skillRef)
   const isWorkVisible = useOnScreen(workRef)
@@ -57,7 +62,7 @@ export default function Navbar({
 
   return (
     <div
-      className="sticky top-0 z-50 h-16 w-full shadow-lg bg-white hidden lg:block"
+      className="sticky top-0 z-50 h-16 w-full shadow-lg bg-white hidden lg:block text-white"
       style={{ opacity: `${opacity}%` }}
     >
       <div className="h-full w-full flex justify-between pl-10 bg-background ">
@@ -167,15 +172,23 @@ export default function Navbar({
             }
           />
         </div>
-        <a
-          href="/resume.pdf"
-          rel="noreferrer"
-          target="_blank"
-          className="h-full flex items-center justify-center px-5 space-x-3"
-        >
-          <p>Download Resume</p>
-          <FontAwesomeIcon icon={faDownload} className="animate-bounce" />
-        </a>
+        <div className="flex space-x-3">
+          <button
+            onClick={() => setDarkMode(!darkMode)}
+            className="w-6 transition duration-300 ease-in-out hover:scale-125 hover:text-primary"
+          >
+            {darkMode ? <FontAwesomeIcon icon={faMoon} /> : <Bright />}
+          </button>
+          <a
+            href="/resume.pdf"
+            rel="noreferrer"
+            target="_blank"
+            className="h-full flex items-center justify-center px-5 space-x-3 transition duration-300 ease-in-out hover:text-primary"
+          >
+            <p>Download Resume</p>
+            <FontAwesomeIcon icon={faDownload} className="animate-bounce" />
+          </a>
+        </div>
       </div>
     </div>
   )
