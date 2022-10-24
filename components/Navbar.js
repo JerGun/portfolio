@@ -110,6 +110,20 @@ export default function Navbar({
               isExperienceHover
             }
           />
+            <OptionButton
+              width={"70px"}
+              name={"Education"}
+              icon={faGraduationCap}
+              onClick={() => executeScroll(educationRef)}
+              onMouseEnter={() => setIsEducationHover(true)}
+              onMouseLeave={() => setIsEducationHover(false)}
+              condition={
+                (!isSkillsVisible &&
+                  !isWorkVisible &&
+                  !isExperienceVisible &&
+                  isEducationVisible) | isEducationHover
+              }
+            />
           <OptionButton
             width={"50px"}
             name={"Awards"}
@@ -121,6 +135,7 @@ export default function Navbar({
               (!isSkillsVisible &&
                 !isWorkVisible &&
                 !isExperienceVisible &&
+                !isEducationVisible &&
                 isAwardVisible) | isAwardHover
             }
           />
@@ -140,22 +155,6 @@ export default function Navbar({
             }
           />
           <OptionButton
-            width={"70px"}
-            name={"Education"}
-            icon={faGraduationCap}
-            onClick={() => executeScroll(educationRef)}
-            onMouseEnter={() => setIsEducationHover(true)}
-            onMouseLeave={() => setIsEducationHover(false)}
-            condition={
-              (!isSkillsVisible &&
-                !isWorkVisible &&
-                !isExperienceVisible &&
-                !isAwardVisible &&
-                !isCertificateVisible &&
-                isEducationVisible) | isEducationHover
-            }
-          />
-          <OptionButton
             name={"Contact"}
             icon={faEnvelope}
             onClick={() => executeScroll(contactRef)}
@@ -165,9 +164,9 @@ export default function Navbar({
               (!isSkillsVisible &&
                 !isWorkVisible &&
                 !isExperienceVisible &&
+                !isEducationVisible &&
                 !isAwardVisible &&
                 !isCertificateVisible &&
-                !isEducationVisible &&
                 isContactVisible) | isContactHover
             }
           />

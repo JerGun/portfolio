@@ -74,14 +74,14 @@ export default function Home() {
           <section ref={experienceRef} className="h-full w-full">
             <Experiences />
           </section>
+          <section ref={educationRef} className="h-full w-full">
+            <Education />
+          </section>
           <section ref={awardRef} className="h-full w-full">
             <Awards awardRef={awardRef} />
           </section>
           <section ref={certificateRef} className="h-full w-full">
             <Certificates />
-          </section>
-          <section ref={educationRef} className="h-full w-full">
-            <Education />
           </section>
           <section ref={contactRef} className="h-full w-full">
             <Contact />
