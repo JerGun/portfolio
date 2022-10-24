@@ -10,6 +10,7 @@ const educations = [
     school: "University of Phayao",
     archievement: "First class honours",
     degree: "Bachelor of Engineering in Software Engineering",
+    grade:"GPAX 3.71",
     date: "2019 - 2022",
     project:
       "Senior Project I (Ticketplace) : Ticket decentralized exchange website using React.js, Solidity and Blockchain technology",
@@ -19,6 +20,7 @@ const educations = [
   {
     school: "Chiang Rai Vidhayakhome School",
     degree: "Science and Mathematics",
+    grade:"GPAX 3.66",
     date: "2009 - 2019",
   },
 ]
@@ -54,8 +56,13 @@ export default function Education() {
               )}
               <p className="text-3xl font-bold">{education.degree}</p>
               <p className="text-xl font-bold">{education.school}</p>
-              <p className="text-text">{education.project}</p>
-              <p className="text-text">{education.projectSecond}</p>
+              <p className="">{education.grade}</p>
+              <p className="text-customGrayHeavy dark:text-text">
+                {education.project}
+              </p>
+              <p className="text-customGrayHeavy dark:text-text">
+                {education.projectSecond}
+              </p>
             </div>
             {i % 2 == 0 && (
               <div className="h-0.5 w-full bg-customGrayLight opacity-50"></div>
