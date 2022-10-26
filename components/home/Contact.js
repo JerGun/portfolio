@@ -114,7 +114,7 @@ export default function Contact() {
           <div className="flex items-center space-x-5 text-sm md:text-base">
             <a
               href="mailto:pawaret.muengkaew@outlook.com"
-              className="h-10 w-10 flex items-center justify-center border rounded-full transition-all duration-500 ease-in-out hover:bg-primary hover:border-primary hover:text-[#333333] hover:scale-110"
+              className="h-10 w-10 flex items-center justify-center border border-customGrayLight rounded-full shadow-md transition-all duration-500 ease-in-out hover:bg-primary hover:border-primary hover:text-[#333333] hover:scale-110"
             >
               <FontAwesomeIcon icon={faEnvelope} />
             </a>
@@ -151,7 +151,7 @@ export default function Contact() {
               </p>
             </div>
             <textarea
-              className="h-36 w-full flex items-center p-2 px-5 rounded-xl bg-input"
+              className="h-36 w-full flex items-center p-2 px-5 rounded-xl outline-none border border-customGrayLight shadow-md bg-white dark:bg-input"
               placeholder="Message"
               onChange={(e) => setForm({ ...form, message: e.target.value })}
             />

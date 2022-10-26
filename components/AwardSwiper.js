@@ -59,7 +59,7 @@ export default function AwardSwiper({
                 size="lg"
               />
             </div>
-            <div className="h-[400px] w-full p-5 pt-10 space-y-5 text-center rounded-xl bg-customGrayHeavy lg:h-[375px]">
+            <div className="h-[400px] w-full p-5 pt-10 space-y-5 text-center rounded-xl border-2 shadow-md dark:border-0 dark:bg-customGrayHeavy lg:h-[375px]">
               <div className="h-[50%] flex flex-col items-center space-y-3">
                 <p className="text-xl font-bold">{award.name}</p>
                 <p>{award.organization}</p>
@@ -72,7 +72,7 @@ export default function AwardSwiper({
                   </div>
                 )}
               </div>
-              <div className="h-0.5 w-full bg-customGrayLight opacity-50"></div>
+              <div className="h-0.5 w-full bg-text dark:bg-customGrayLight opacity-50"></div>
               <p>{award.description}</p>
             </div>
           </div>

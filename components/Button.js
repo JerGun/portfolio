@@ -5,7 +5,7 @@ export default function Button({ title, onClick, isLoading, isDisable }) {
     <button
       className={`${
         isDisable ? "bg-customGrayLight" : "bg-primary"
-      } h-12 w-56 flex items-center justify-center font-bold transition-all duration-500 ease-in-out rounded-lg px-10 text-black`}
+      } h-12 w-56 flex items-center justify-center font-bold transition-all duration-500 ease-in-out rounded-lg px-10 text-black shadow-md`}
       onClick={onClick}
       disabled={isLoading || isDisable}
     >

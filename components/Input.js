@@ -1,9 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import {
-  faEye,
-  faEyeSlash,
-  faMagnifyingGlass,
-} from "@fortawesome/free-solid-svg-icons"
+import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons"
 import { useState } from "react"
 
 export default function Input({
@@ -22,7 +18,7 @@ export default function Input({
     <div
       className={`${
         h ? h : "h-12"
-      } ${w} flex items-center p-2 px-5 rounded-xl bg-input`}
+      } ${w} flex items-center p-2 px-5 rounded-xl border border-customGrayLight shadow-md dark:bg-input`}
     >
       <input
         type={

@@ -44,7 +44,7 @@ export default function Projects({ title, projects, active }) {
       <div className="h-full w-full space-y-10 md:space-y-0 md:grid md:grid-cols-2 lg:grid-cols-3 gap-10">
         {projects.map((project, i) => (
           <div data-aos="zoom-in-up" key={i}>
-            <div className="h-full rounded-xl flex flex-col justify-between border border-customGrayHeavy bg-customGrayHeavy transition duration-500 ease-in-out hover:scale-105">
+            <div className="h-full rounded-xl flex flex-col justify-between border dark:border-customGrayHeavy dark:bg-customGrayHeavy transition duration-500 ease-in-out hover:scale-105 shadow-md">
               <div className="flex flex-col">
                 <div className="relative h-[200px] w-full rounded-t-xl lg:h-[300px]">
                   <img
@@ -93,7 +93,7 @@ export default function Projects({ title, projects, active }) {
                     <div className="w-full flex flex-wrap">
                       {project.tech.map((tech, i) => (
                         <div className="flex text-sm md:text-base" key={i}>
-                          <p className={`${i % 2 != 0 && "text-text"}`}>
+                          <p className={`${i % 2 != 0 && "text-customGrayLight dark:text-text"}`}>
                             {tech}
                           </p>
                           <span className="w-5"></span>
@@ -105,18 +105,6 @@ export default function Projects({ title, projects, active }) {
               </div>
               <div className="flex px-5 pb-5 justify-between">
                 <div className="flex items-center space-x-3">
-                  {/* <span class="relative flex h-3 w-3">
-                  <span
-                    class={`${
-                      project.active ? "bg-green-400" : "bg-red-400"
-                    } animate-ping absolute inline-flex h-full w-full rounded-full opacity-75`}
-                  ></span>
-                  <span
-                    class={`${
-                      project.active ? "bg-green-500" : "bg-red-500"
-                    } relative inline-flex rounded-full h-3 w-3`}
-                  ></span>
-                </span> */}
                   <p
                     className={`${
                       project.status == "active"
@@ -135,7 +123,6 @@ export default function Projects({ title, projects, active }) {
                     >
                       <FontAwesomeIcon
                         icon={faCode}
-                        // className="text-primary"
                       />
                     </a>
                   )}
@@ -147,7 +134,6 @@ export default function Projects({ title, projects, active }) {
                     >
                       <FontAwesomeIcon
                         icon={faArrowUpRightFromSquare}
-                        // className="text-primary"
                       />
                     </a>
                   )}
