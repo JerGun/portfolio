@@ -4,8 +4,8 @@ export default function Flutter() {
       <svg
         version="1.0"
         xmlns="http://www.w3.org/2000/svg"
-        width="55px"
-        height="55px"
+        width="50"
+        height="50"
         viewBox="0 0 225.000000 225.000000"
         preserveAspectRatio="xMidYMid meet"
         fill="currentColor"
