@@ -36,11 +36,11 @@ const socials = [
   },
   {
     url: "https://github.com/JerGun/",
-    icon: <GitHub />,
+    icon: <GitHub width={25} height={25} />,
   },
   {
     url: "https://gitlab.com/JerGun/",
-    icon: <GitLab />,
+    icon: <GitLab width={25} height={25} />,
   },
 ]
 
@@ -69,7 +69,7 @@ export default function Hero({ darkMode, setDarkMode }) {
         <div className="flex flex-col items-center space-y-5">
           <p className="text-2xl font-bold">Pawaret Muengkaew</p>
           <p className="">April 18th, 2001</p>
-          <p className="text-customGrayLight">@pawaret.dev</p>
+          <p className="text-customGrayHeavy dark:text-customGrayLight">@pawaret.dev</p>
           <div className="h-10 text-primary">
             <TypeAnimation
               cursor={false}
@@ -93,7 +93,7 @@ export default function Hero({ darkMode, setDarkMode }) {
               <p className="font-bold text-primary ">!</p>
             </div>
             <div className="flex md:space-x-5" data-aos="fade-up">
-              <span className="h-0.5 w-10 mt-3 bg-white hidden md:block"></span>
+              <span className="h-0.5 w-10 mt-3 bg-black dark:bg-white hidden md:block"></span>
               <p className="w-full">
                 I'm a web developer from Thailand. I describe myself as a
                 passionate developer who loves coding and always learning about

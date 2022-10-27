@@ -30,7 +30,7 @@ export default function CertificateSwiper({
               <img
                 src={certificate.url}
                 alt={certificate.title}
-                className="rounded-xl "
+                className="rounded-xl"
               />
               <p className="text-lg">{certificate.title}</p>
             </button>

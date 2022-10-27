@@ -174,15 +174,15 @@ export default function Navbar({
         <div className="flex space-x-3">
           <button
             onClick={() => setDarkMode(!darkMode)}
-            className="w-6 transition duration-300 ease-in-out hover:scale-125 hover:text-primary"
+            className="w-6 outline-none transition duration-300 ease-in-out hover:scale-125 hover:text-primary"
           >
-            {darkMode ? <FontAwesomeIcon icon={faMoon} /> : <Bright />}
+            {darkMode ? <FontAwesomeIcon icon={faMoon} /> : <Bright width={20} height={20}/>}
           </button>
           <a
             href="/resume.pdf"
             rel="noreferrer"
             target="_blank"
-            className="h-full flex items-center justify-center px-5 space-x-3 transition duration-300 ease-in-out hover:text-primary"
+            className="h-full flex items-center justify-center px-5 space-x-3 transition-all duration-300 ease-in-out hover:text-primary"
           >
             <p>Download Resume</p>
             <FontAwesomeIcon icon={faDownload} className="animate-bounce" />
