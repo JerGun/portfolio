@@ -3,8 +3,8 @@ export default function TypeScript() {
     <div>
       <svg
         className="rounded-md ml-1 mt-1 text-center"
-        width="50px"
-        height="50px"
+        width="45px"
+        height="45px"
         viewBox="0 0 24 24"
         role="img"
         xmlns="http://www.w3.org/2000/svg"
