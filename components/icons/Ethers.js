@@ -4,8 +4,8 @@ export default function Ethers() {
       <svg
         xmlns="http://www.w3.org/2000/svg"
         version="1.0"
-        width="50px"
-        height="50px"
+        width="80px"
+        height="80px"
         viewBox="0 0 600.000000 348.000000"
         fill="currentColor"
       >
