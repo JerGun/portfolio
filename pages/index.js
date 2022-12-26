@@ -1,15 +1,17 @@
+import Footer from "@components/Footer"
+import Awards from "@components/home/Awards"
+import Certificates from "@components/home/Certificates"
+import Contact from "@components/home/Contact"
+import Education from "@components/home/Education"
+import Experiences from "@components/home/Experiences"
+import Hero from "@components/home/Hero"
+import Skills from "@components/home/Skills"
+import Works from "@components/home/Works"
 import Navbar from "@components/Navbar"
+import { faArrowUp } from "@fortawesome/free-solid-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import Head from "next/head"
 import { useEffect, useRef, useState } from "react"
-import Footer from "@components/Footer"
-import Hero from "@components/home/Hero"
-import Works from "@components/home/Works"
-import Skills from "@components/home/Skills"
-import Experiences from "@components/home/Experiences"
-import Awards from "@components/home/Awards"
-import Education from "@components/home/Education"
-import Contact from "@components/home/Contact"
-import Certificates from "@components/home/Certificates"
 
 export default function Home() {
   const heroRef = useRef(null)
@@ -23,6 +25,7 @@ export default function Home() {
 
   const [scrollY, setScrollY] = useState(0)
   const [darkMode, setDarkMode] = useState(true)
+  const [isVisible, setIsVisible] = useState(false)
 
   useEffect(() => {
     handleScroll()
@@ -35,18 +38,40 @@ export default function Home() {
   const handleScroll = () => {
     const maxHeight = document.documentElement.clientHeight
     setScrollY(Math.round((Math.floor(window.scrollY) / maxHeight) * 100))
+
+    if (window.pageYOffset > heroRef.current.clientHeight) {
+      setIsVisible(true)
+    } else {
+      setIsVisible(false)
+    }
+  }
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    })
   }
 
   return (
-    <div className={`${darkMode && "dark"} h-full w-full `}>
+    <div className={`${darkMode && "dark"} relative h-full w-full`}>
       <Head>
         <title>Pawaret Muengkaew | Portfolio</title>
         <meta
           name="description"
-          content="Pawaret Muengkaew personal portfolio website made with 💖 using Next.js and Taiwlind CSS"
+          content="Pawaret Muengkaew personal portfolio website made with 💖 using Next.js and Tailwind CSS"
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <button
+        type="button"
+        onClick={scrollToTop}
+        className={`
+        ${isVisible ? "block" : "hidden"} 
+        fixed right-[10%] lg:right-[3%] bottom-[3%] lg:bottom-[5%] h-12 w-12 z-40 animate-bounce bg-customGrayHeavy hover:bg-primary text-primary hover:text-customGrayHeavy transition duration-300 ease-in-out items-center rounded-full p-3 shadow-sm`}
+      >
+        <FontAwesomeIcon icon={faArrowUp} />
+      </button>
       <div className="h-full w-full bg-white dark:bg-opacity-90 dark:bg-background text-black dark:text-white">
         <section ref={heroRef}>
           <Hero darkMode={darkMode} setDarkMode={setDarkMode} />
