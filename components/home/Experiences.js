@@ -95,7 +95,7 @@ export default function Experiences() {
                   <span className="h-5 w-5 rounded-full bg-primary"></span>
                 </div>
                 <div className="h-full w-10 flex items-center justify-center">
-                  <div className="h-[450px] md:h-72 lg:h-52 w-0 border-[0.2px] border-dashed border-black dark:border-white"></div>
+                  <div className="h-[450px] md:h-72 lg:h-52 w-0 border-[1px] border-dashed border-black dark:border-white"></div>
                 </div>
               </div>
               <div className="h-full w-full md:w-11/12 flex flex-col flex-wrap pl-10 py-1.5" data-aos="zoom-in-left">

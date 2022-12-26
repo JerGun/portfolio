@@ -200,7 +200,7 @@ export default function Skills() {
     <div className="h-full w-full flex flex-col items-center py-20 space-y-16">
       <p className="text-4xl font-bold">Skills</p>
       <div className="w-9/12 flex flex-col items-center space-y-20">
-        <div className="h-full w-full flex flex-col justify-center space-y-16 divide-opacity-30 divide-white md:space-y-0 md:divide-x md:flex-row">
+        <div className="h-full w-full flex flex-col justify-center space-y-16 divide-opacity-30 dark:divide-opacity-30 divide-black dark:divide-white md:space-y-0 md:divide-x md:flex-row">
           <DevSkills title="Backend Dev" skills={backendSkills} />
           {/* <div className="h-full w-full flex flex-col items-center space-y-10">
             <div className="h-fit w-fit flex flex-col items-center space-y-5">
@@ -215,8 +215,8 @@ export default function Skills() {
           </div> */}
           <DevSkills title="Frontend Dev" skills={frontendSkills} />
         </div>
-        <span className="h-[0.5px] w-full bg-white bg-opacity-30 hidden md:block"></span>
-        <div className="w-full md:grid grid-cols-7 justify-center space-y-10 md:space-y-0 md:divide-x divide-opacity-30 divide-white">
+        <span className="h-[0.5px] w-full  bg-black dark:bg-white bg-opacity-30 dark:bg-opacity-30 hidden md:block"></span>
+        <div className="w-full md:grid grid-cols-7 justify-center space-y-10 md:space-y-0 md:divide-x divide-opacity-30 dark:divide-opacity-30 divide-black dark:divide-white">
           <div className="h-full w-full flex flex-col items-center col-span-2 space-y-5" data-aos="zoom-in-right">
             <div className="h-fit w-fit flex flex-col items-center space-y-5">
               <FontAwesomeIcon icon={faCodeBranch} size="2x" className="text-primary" />
